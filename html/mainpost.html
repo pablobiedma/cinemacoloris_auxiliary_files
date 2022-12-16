@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/p.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>How I made a Natural Disasters detector</title>
+<meta name="description" content="The person that you will spend the most time with in your life is yourself,
+  so you better try to make yourself as interesting as possible.">
+<link rel="canonical" href="Index.html">
+<meta name="keywords" content="Pablo Biedma Nunez, Pablo Biedma, Pablo Biedma Núnez, Pablo, Spain, Spanish, Computer Scientist, Computer Science, Engineering, programming, program, developer, IT, cinema, film, filmmaker, movies, software, AI, chess">
+<meta name="author" content="Pablo Biedma Nunez">
+<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.pablobiedma.com\/","name":"Pablo Biedma","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.pablobiedma.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.pablobiedma.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.7"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-83915680-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-83915680-3');
+</script>
+
+		<style type="text/css">
+			 body{
+        width:100%;
+        overflow-x:hidden;
+        overflow-y:hidden;
+    }
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='magnus-style-css'  href='../css/magnus.css' type='text/css' media='all' />
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.pablobiedma.com/');
+</script>	<style type="text/css">
+			.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+    <style type="text/css" id="wp-custom-css">
+    .site-header-image .section-image {
+    	opacity: 0.87;
+    }
+
+    #menu-item-14 a{
+    	color: #ed7d86 !important;
+    }
+
+    #menu-item-14 a:hover{
+    	color: white !important;
+    }
+
+    #subscribe-text-section {
+    	text-align: center;
+    }
+
+    .sya_container > ul {
+    	list-style: none;
+    	padding-left: 0px;
+    	margin-left: 0px;
+    }
+
+    .sya_postcontent > span {
+    	width: 150px !important;
+    	display: inline-block;
+    }
+
+    .reading-time {
+    	display: inline-block;
+    }
+
+    .reading-time-result {
+    	margin-right: 0px !important;
+    	color: #a1a1a9;
+    }
+
+    .by-author {
+    	color: #a1a1a9;
+    }
+
+    .entry-title {
+    	margin-bottom: 0px !important;
+    	margin-top: 10px;
+    	white-space: pre-wrap;
+    	word-break: keep-all;
+    }
+
+    .entry-meta {
+    	display: inline-block;
+    	margin-bottom: 10px;
+    }
+
+    .entry-ul {
+    	padding-left: 0px;
+    	margin-left: 0px;
+    }
+
+    .entry-ul > li:first-child {
+    	list-style-type: none;
+    }
+
+    .entry-ul > li {
+    	float: left;
+    	padding: 1px;
+
+    }
+
+    .posted-on {
+    	margin-right: 0px !important;
+    }
+
+    @media (max-width: 769px) {
+        /* For mobile phones: */
+    		.site-header-image {
+    			margin-bottom: 25px !important;
+    		}
+    }
+
+    @media (max-width: 767px) {
+        /* For mobile phones: */
+        .sya_postcontent > span {
+    			display: block;
+    			width: 100%;
+    		}
+    		.sya_postcontent {
+    			margin-bottom: 10px;
+    		}
+    }
+
+    @media (min-width: 1400px) {
+        /* For mobile phones: */
+        .sya_postcontent > span {
+    			width: 180px !important;
+    		}
+    }
+
+    .landing-page-content-div {
+    	position: absolute;
+    	top: 25%;
+    	width:100%;
+    }
+
+    @media (max-width: 767px) {
+    		/* For mobile phones: */
+    		.landing-page-content-div {
+    			top: 15%;
+    		}
+    }
+
+    .landing-page-title {
+    	color: white;
+    	opacity: 1;
+    	font-size: 2.8935em;
+    	text-align: center;
+    }
+
+    @media (max-width: 767px) {
+    		/* For mobile phones: */
+    		.landing-page-title {
+    			font-size: 1.7em;
+    			margin-left: 5px;
+    			margin-right: 5px;
+    		}
+
+    		.landing-section-image {
+    			margin-bottom: 0px !important;
+    		}
+    }
+
+    .landing-section-image {
+    	min-height: 100vh !important;
+    	margin: 0px !important;
+    }
+
+    .landing-page-article {
+    	display: none !important;
+    }
+
+    .landing-page-text-div {
+    	text-align: center;
+    	line-height: 1.4em;
+    	color: #bfbfbf;
+    }
+
+    @media (max-width: 767px) {
+    		/* For mobile phones: */
+    		.landing-page-text-div {
+    			font-size: 0.85em;
+    			line-height: 1em;
+    		}
+
+    		.landing-page-text-div .entry-content {
+    			width: 100% !important;
+    			margin: 0px 0px 25px 0px !important;
+    			padding: 0px 10px 0px 10px !important;
+    		}
+    }
+
+    .landing-page-text-div .entry-content {
+    	width: 70%;
+    	margin: auto;
+    	margin-bottom: 25px;
+    }
+
+
+    .landing-page-text-buttons button {
+    	margin: 5px;
+    	width: 50vh;
+    	max-width: 400px;
+    }
+
+    .landing-page-text-buttons .traffic {
+    	max-width: 815px;
+    	width: 100vh;
+    }
+
+    @media (max-width: 822px) {
+    		/* For mobile phones: */
+    		.landing-page-text-buttons .traffic {
+    			max-width: 400px;
+    			width: 50vh;
+    		}
+    }
+
+    button {
+      font-size: 0.6666666667em;
+      letter-spacing: 0.1316872428em;
+      color: #fdf1f2;
+      text-shadow: 0 0 0 transparent;
+      border-style: solid;
+      border-width: 1px 1px 3px;
+      border-color: #eb6e78 #d4636c #bc5860;
+      border-radius: 3px;
+      background: #eb6e78;
+      padding: 0.8573333333em 1.286em;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+
+    button:hover {
+        background: #ef8b93;
+        border-color: #ef8b93 #ed7d86 #d4636c;
+        color: #fff;
+        text-shadow: 0 1px 1px #bc5860;
+        -webkit-transition: all 0.15s ease-in-out;
+        -moz-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+    }
+    button:active {
+        background: #d4636c;
+        border-color: #bc5860 #bc5860 #bc5860;
+        border-width: 3px 1px 1px;
+    }
+
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 1px 4px #f7c5c9;
+        -webkit-transition: all 0.15s ease-in-out;
+        -moz-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+    }
+
+    button {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1em;
+      clear: both;
+      text-transform: uppercase;
+      line-height: 1; }
+      @media (max-width: 480px) {
+        button {
+    			font-size: 0.8em;
+          word-wrap: break-word; } }
+      @media (min-width: 1600px) {
+        button {
+          font-size: 1em; } }
+    		</style>
+</head>
+<body class="page-template-default page page-id-5 single featured-image"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+</style>    <div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header" role="banner">
+
+		<div class="site-branding">
+
+			<h1 class="site-title"><a href="index.html" rel="home">Pablo Biedma</a></h1>
+
+			<h2 class="site-description"></h2>
+		</div><!-- .site-branding -->
+
+		<nav id="site-navigation" class="header-navigation" role="navigation">
+			<div class="menu-header-container">
+        <ul id="header-menu" class="menu"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-7"><a href="Index.html">Home</a></li>
+        <li id="menu-item-2863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2863"><a target="_blank" href="archives.html">Archives</a></li>
+        <li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a target="_blank" href="about.html">About Pablo</a></li>
+</ul>			</div>
+			<button class="sidebar-toggle" aria-controls="sidebar" aria-expanded="false">
+				<span class="sidebar-toggle-icon">Sidebar</span>
+			</button>
+		</nav><!-- #site-navigation -->
+
+	</header><!-- #masthead -->
+
+
+  <section class="site-header-image">
+
+			<div class="section-image" style="background-image:  url(https://live.staticflickr.com/65535/48950996746_7e1fb6e855_k.jpg);">
+			</div><!-- .section-image -->
+
+			</section><!-- .site-header-image -->
+
+	<section id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+
+
+<article id="post-3153" class="post-3153 post type-post status-publish format-standard has-post-thumbnail hentry category-general">
+	<header class="entry-header">
+		<h1 class="entry-title">How I Made a Natural Disasters Detector</h1>
+		<div class="entry-meta">
+			<span class="posted-on">Posted on <a href="archives.html" rel="bookmark"><time class="entry-date published" datetime="2020-11-27T15:52:45+00:00">August 10, 2020</time><time class="updated" datetime="2020-09-27T16:21:36+00:00">August 10, 2020</time></a></span> &#9679; <div class="reading-time">Reading time: <span class="reading-time-result">3 minutes</span></div> &#9679; By <a href="about.html" rel="bookmark"><span class="entry-date published">Pablo Biedma</span></a>
+		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+    <p><strong>Natural disasters</strong> are one of the biggest problems in society.</p>
+<p>Many, many people die every year because of them. This problem will be increasingly impactful, especially because of <strong>climate change</strong>, which will bring more natural disasters.</p>
+<p>And even though nowadays we have excellent technology we are not able to solve this. As a Computer Science student, I couldn't let this happen.</p>
+<p>Two years ago, I came home after a normal day in high school. I sat on the sofa, and I started watching this documentary about how animals can detect natural disasters, and I was wondering&hellip; Why don&rsquo;t we do the same thing?</p>
+<p>Well, First of all, How do they do it? How are animals able to predict natural disasters? Well, when a natural disaster, like an earthquake, is approaching, it generates <strong>pressure variations.</strong> Some animals, like birds, detect those variations days before the disaster, and then they fly away, and they are safe.</p>
+<p>I want to do the same thing... But how can we do it? We can use the <strong>piezoelectric effect.</strong></p>
+<p>But&hellip; What is the <em>piezoelectric effect</em>? This is a property that some materials have, that when they receive <em>mechanical tension</em>, they generate electricity.</p>
+<p>So we can use the <em>pressure variations</em> as <em>mechanical stress,</em> and we can use the&nbsp;<em>electricity</em> generated to activate a circuit that alerts the population from the disaster.</p>
+<p>Finally, I decided to build a Natural Disasters detector using this principle. So I started working on this idea, and, first of all, I drew a small diagram for a circuit based on a <em>piezoelectric material,</em> and then I finished the prototype.</p>
+<p>&nbsp;<img src="https://2020.tudelftcontest.nl/candidate-media/eyJpdiI6Ik4wZlB4WUdGNllXTEZhcVFVYUc2a3c9PSIsInZhbHVlIjoiVFZGTXJ5MVN0MDdVbWdqS0dBc29YUT09IiwibWFjIjoiMjFkMWM1NjE2NDJlZTYzOTc1YTU2YWZkNTRiODkwM2JkZGNhODIxNGZmNmE5Mzg1NjNmYjVhZWFhOWZlMWI2MiJ9/url" alt="" width="326" height="326" /></p>
+<p>A crucial thing about this idea is that it is really cheap because I am only using basic electronic components; this is really important because the main problem with current solutions is that they are too expensive for developing countries.</p>
+<p>This first prototype was able to: 1- Detect pressure variations 2- Alert the population after them. This is not enough... We need something else&hellip; Because&hellip; The difference between a human and a bird is that one is intelligent, and the other one... is the human.</p>
+<p><img src="https://2020.tudelftcontest.nl/candidate-media/eyJpdiI6InRpMW81Tm5nSW55WUJlSnhySnZrdWc9PSIsInZhbHVlIjoiMVZhcm5Cb0Z0dlwvQzBFNGVMMmRnQ3c9PSIsIm1hYyI6IjQ5ODI2YTMxYzJkYjE5MzA2MDRmODM0ZGRjNjQyZWY1ZWVmMTMyODZhMjNmM2Y0ZDM3MTk2YTQwNTQyMjU2ZTUifQ==/url" alt="" width="242" height="242" /></p>
+<p><img src="https://2020.tudelftcontest.nl/candidate-media/eyJpdiI6IitBcmx4aXpXMDdIQVl0R3BYZUVtMEE9PSIsInZhbHVlIjoiOVpPb1BxYVVBUVNPTnJNTG5WMkpGUT09IiwibWFjIjoiN2QxN2RlNmYzYTJlNTdlOTUxYjkyNjQ0MTIzYmUzNGE1NWUwZWQzOWUyNGFjMDYwNTQwYmZkMjQwNzM3MGNjMCJ9/url" alt="" width="242" height="242" /></p>
+
+<p>So... apart from the piezoelectric effect, I am also going to use deep learning. I am going to collect data from previous disasters, and I am going to run some simulations and I am going to analyze the data in order to end up with an even more efficient solution.</p>
+<p>Obviously, there is still work to do, as we need to bring the prototype to a bigger scale, and also, as I said before, I need to start collecting and analyzing the data. But the main idea is the same one; I took this problem really painful for society. I saw how nature solves it, and I tried to replicate this solution in the most efficient way to create a solution that could save millions of lives...</p>
+<p>Because... &ldquo;Intelligence without ideas is just like a bird without wings&rdquo;...</p>
+<p>PS:</p>
+<p>If you want a summary of what I just said, you can watch this video where I pretty much repeat the same thing:</p>
+<p><iframe src="https://www.youtube.com/embed/lWoNlZRKyaA" width="420" height="315"></iframe></p>
+<p>&nbsp;</p>
+<p><br /><br /></p>
+  <nav class="navigation post-navigation" role="navigation">
+  		<h2 class="screen-reader-text">Post navigation</h2>
+  		<div class="nav-links"><div class="nav-previous"><a href="post11.html" rel="prev">Making a platform to reduce food waste</a></div><div class="nav-next"><a href="post2.html" rel="next">How playing chess professionally has helped me
+</a></div></div>
+  	</nav>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+    <div id="sidebar" class="sidebar">
+        <div id="sidebar-inner" class="sidebar-inner">
+          <aside id="nav_menu-3" class="widget widget_nav_menu"><h2 class="widget-title">Pages</h2><div class="menu-primary-container"><ul id="menu-primary" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-7"><a href="Index.html">Home</a></li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2863"><a href="archives.html">How I made a Natural Disasters detector</a></li>
+          <li id="menu-item-8" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8"><a href="about.html">About Pablo</a></li>
+          </ul></div></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>
+            <ul>
+  <li>
+    <a href="mainpost.html">How I made a Natural Disasters detector</a>
+        </li>
+      <li>
+    <a href="post2.html">How playing chess professionally has helped me</a>
+        </li>
+      <li>
+    <a href="post3.html">Do you love movies?</a>
+        </li>
+      <li>
+  <a href="post4.html">My experiences giving my first TED talk</a>
+        </li>
+      <li>
+  <a href="post5.html">How I got into a top university</a>
+    </li>
+				</ul>
+		</aside>
+  </div>
+  </div>
+  </div>
+  </section>
+  <script type='text/javascript' src='../javascript/nav.js'></script>
+  <script type='text/javascript' src='../javascript/skip.js'></script>
+  <script type='text/javascript' src='../javascript/functions.js'></script>
+  <script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>
+</body>
+</html>
