@@ -127,7 +127,17 @@ img.emoji {
     .by-author {
     	color: #a1a1a9;
     }
-
+	.fade{
+		animation: fadeIn 15s;
+	}
+	@keyframes fadeIn{
+		from{
+			opacity: 0;
+		}
+		to{
+			opacity: 1;
+		}
+	}
     .entry-title {
     	margin-bottom: 0px !important;
     	margin-top: 10px;
@@ -358,7 +368,8 @@ img.emoji {
   <header class="entry-header">
     <h1 class="entry-title">Revista Cinema Coloris</h1>
   </br>
-	<p class="entry-title" id="fade"><i>"Cinemacoloris surge de la necesidad de entender el cine, 
+
+	<p class="fade"><i>"Cinemacoloris surge de la necesidad de entender el cine, 
 		no como arte ni entretenimiento, sino como algo más inherente a su ser: <strong> la magia..."</strong></i></p>
 
 </header>

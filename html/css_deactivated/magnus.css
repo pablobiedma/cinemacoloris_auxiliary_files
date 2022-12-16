@@ -267,7 +267,7 @@ textarea {
   font-weight: 400;
   line-height: 1.5; }
 
-h1, h2, h3, h4, h5, h6, form button,
+h5, h6, form button,
 form input[type="button"],
 form input[type="reset"],
 form input[type="submit"], .comment-form label {
@@ -326,7 +326,7 @@ form input[type="submit"], .comment-form label {
     transition: font-size 0.2s ease-in-out; } }
 
 .sidebar h2 {
-  color: #fdbf73; }
+  color: #72727e; }
 
 p {
   margin-bottom: 1em; }
@@ -395,13 +395,13 @@ body {
 
 ::selection {
   /* WebKit/Blink Browsers */
-  background: #edc07d;
+  background: #f0b576;
   color: #fdf1f2;
   text-shadow: 0 1px 1px #f69b2c; }
 
 ::-moz-selection {
   /* Gecko Browsers */
-  background: #edb37d;
+  background: #eeb378;
   color: #fdf1f2;
   text-shadow: 0 1px 1px #e67f17; }
 
@@ -791,7 +791,7 @@ a {
       -moz-transition-timing-function: ease-in-out;
       transition-timing-function: ease-in-out; }
       .sidebar-toggled .sidebar-toggle:hover span:before, .sidebar-toggled .sidebar-toggle:hover span:after {
-        background: #ff9019fc; }
+        background: #ffb96ff7; }
   .sidebar-toggled.admin-bar .sidebar-toggle {
     top: 32px; }
     @media (max-width: 800px) {
@@ -1192,7 +1192,7 @@ blockquote.alignright {
     text-decoration: none;
     color: #434353; }
     .entry-header .entry-title a:hover {
-      color: #ff9019fc; }
+      color: #ffb96ff7; }
 
 .entry-header .entry-meta,
 .entry-footer {
@@ -1207,7 +1207,7 @@ blockquote.alignright {
     color: #a1a1a9; }
     .entry-header .entry-meta a:hover,
     .entry-footer a:hover {
-      color: #ff9019fc; }
+      color: #ffb96ff7; }
   .entry-header .entry-meta span,
   .entry-footer span {
     margin-right: 1em;
@@ -1291,7 +1291,7 @@ blockquote.alignright {
         text-decoration: none;
         color: white; }
         .blog-home-content article .entry-header .entry-title a:hover {
-          color: #ff9019fc; }
+          color: #ffb96ff7; }
   .blog-home-content article:first-child .entry-header {
     font-size: 1em; }
     @media (min-width: 1400px) {
@@ -1562,7 +1562,7 @@ blockquote.alignright {
           text-decoration: none;
           color: white; }
           .error404 article .entry-header .entry-title a:hover {
-            color: #ff9019fc; }
+            color: #ffb96ff7; }
   .error404.header-image .site-header-image {
     display: none; }
 
@@ -1635,7 +1635,7 @@ blockquote.alignright {
     color: #72727e;
     text-decoration: none; }
     .sidebar a:hover {
-      color: #ff9019fc#ff9019fc; }
+      color: #ffb96ff7; }
 
 .sidebar-toggled .sidebar {
   -webkit-transform: translateX(0%);
