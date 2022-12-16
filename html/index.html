@@ -7,7 +7,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Home</title>
 <meta name="description" content="Cinemacoloris surge de la necesidad de entender el cine,
-no como arte ni entretenimiento, sino como algo más inherente a su ser: la magia..">
+no como arte ni entretenimiento, sino como algo más inherente a su ser: la magia.">
 <link rel="canonical" href="index.html">
 <meta name="keywords" content="Revista, Revista de cine, cine, film, cinemacoloris, cinema coloris,
   coloris, revista cinema coloris, cine clasico, criticas de cine, ensayos, monograficos, festivales de cine, john ford, billy wilder, alfred hitchcock, howard hawks, fritz lang, frank capra, ernst lubitsch">
@@ -92,12 +92,12 @@ img.emoji {
     	opacity: 0.87;
     }
 
-    #menu-item-14 a{
-    	color: #ed7d86 !important;
-    }
+     .menu-item {
+    	color: #ffb96ff7 !important;
+    } 
 
-    #menu-item-14 a:hover{
-    	color: white !important;
+    .menu-item {
+    	color: #ff9019fc !important;
     }
 
     #subscribe-text-section {
@@ -279,32 +279,32 @@ img.emoji {
       text-shadow: 0 0 0 transparent;
       border-style: solid;
       border-width: 1px 1px 3px;
-      border-color: #eb6e78 #d4636c #bc5860;
+      border-color: #fca649 #fca649 #fca649;
       border-radius: 3px;
-      background: #eb6e78;
+      background: #fca649;
       padding: 0.8573333333em 1.286em;
       -webkit-transition: all 0.2s ease-in-out;
       -moz-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
 
     button:hover {
-        background: #ef8b93;
-        border-color: #ef8b93 #ed7d86 #d4636c;
+        background: #ff9019fc;
+        border-color: #ff9019fc #ff9019fc #ff9019fc;
         color: #fff;
-        text-shadow: 0 1px 1px #bc5860;
+        text-shadow: 0 1px 1px #e77f10;
         -webkit-transition: all 0.15s ease-in-out;
         -moz-transition: all 0.15s ease-in-out;
         transition: all 0.15s ease-in-out;
     }
     button:active {
-        background: #d4636c;
-        border-color: #bc5860 #bc5860 #bc5860;
+        background: #e57e08;
+        border-color: #e57e08 #e57e08 #e57e08;
         border-width: 3px 1px 1px;
     }
 
     button:focus {
         outline: none;
-        box-shadow: 0 0 1px 4px #f7c5c9;
+        box-shadow: 0 0 1px 4px #f7ddc5;
         -webkit-transition: all 0.15s ease-in-out;
         -moz-transition: all 0.15s ease-in-out;
         transition: all 0.15s ease-in-out;
@@ -338,11 +338,11 @@ img.emoji {
 </div>
  <nav id="site-navigation" class="header-navigation" role="navigation">
   <div class="menu-header-container">
-    <ul id="header-menu" class="menu"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-7"><a href="Index.html">Home</a></li>
-    <li id="menu-item-2863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2863"><a target="_blank" href="archives.html">Articulos</a></li>
-    <li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a target="_blank" href="https://www.youtube.com/@CinemaColoris">Videos</a></li>
-	<li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a target="_blank" href="podcast.html">Podcast</a></li>
-	<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16"><a target="_blank" href="about.html">Contacto</a></li>
+    <ul id="header-menu" class="menu"><li id="menu-item-7" class="menu-item"><a href="Index.html">Home</a></li>
+    <li id="menu-item-2863" class="menu-item"><a target="_blank" href="archives.html">Articulos</a></li>
+    <li id="menu-item-14" class="menu-item"><a target="_blank" href="https://www.youtube.com/@CinemaColoris">Videos</a></li>
+	<li id="menu-item-15" class="menu-item"><a target="_blank" href="podcast.html">Podcast</a></li>
+	<li id="menu-item-16" class="menu-item"><a target="_blank" href="about.html">Contacto</a></li>
 </ul>			</div>
 <button class="sidebar-toggle" aria-controls="sidebar" aria-expanded="false">
   <span class="sidebar-toogle-icon">Sidebar</span>
@@ -358,8 +358,8 @@ img.emoji {
   <header class="entry-header">
     <h1 class="entry-title">Revista Cinema Coloris</h1>
   </br>
-	<h4 class="entry-title">"Cinemacoloris surge de la necesidad de entender el cine,
-		no como arte ni entretenimiento, sino como algo más inherente a su ser: la magia..."</h4>
+	<p class="entry-title" id="fade"><i>"Cinemacoloris surge de la necesidad de entender el cine, 
+		no como arte ni entretenimiento, sino como algo más inherente a su ser: <strong> la magia..."</strong></i></p>
 
 </header>
 </div>
@@ -468,6 +468,66 @@ img.emoji {
             <script type='text/javascript' src='../javascript/skip.js'></script>
             <script type='text/javascript' src='../javascript/functions.js'></script>
             <script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>
+			<html>
+				<head>
+				  <meta charset="utf-8">
+				  <meta name="viewport" content="width=device-width initial-scale=1">
+				  <title>Components Project - Simple Footer</title>
+				</head>
+				<body>
+				  <footer>
+					<style>
+						
+footer {
+  background: url('https://orange.codeberryschool.com/content/images/project-assets/simple-footer.png') repeat center;
+  display: table;
+  width: 100vw;
+  height: 8rem;
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Arial', sans-serif;
+  font-size: .875rem;
+}
 
+.wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+footer small {
+  color: #ccc;
+  letter-spacing: .025rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-nav a {
+  color: #ffb96ff7;
+  text-decoration: none;
+  margin: 0 .5rem;
+  display: inline-block;
+}
+
+.footer-nav a:hover {
+  color: #ff9019fc;
+  transition: color .15s ease-in-out;
+}
+
+
+
+					</style>
+					<div class="wrapper">
+					  <small>&copy;2023 <strong>Revista Cinema Coloris</strong>, All Rights Reserved</small>
+					  <nav class="footer-nav">
+						<a href="index.html">Home</a>
+						<a href="articulos.html">Articulos</a>
+						<a href="https://www.youtube.com/@CinemaColoris">Videos</a>
+						<a href="podcast.html">Podcast</a>
+						<a href="#">Contacto</a>
+					  </nav>
+					</div>
+				  </footer>
+				</body>
+				</html>
 		</body>
 </html>
