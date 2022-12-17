@@ -1275,7 +1275,7 @@ blockquote.alignright {
   .blog-home-content article .entry-header {
     padding: 0 1em;
     margin: 0 auto;
-    //max-width: 38.443359375em;
+    max-width: 38.443359375em;
     font-size: 0.6666666667em;
     text-align: center; }
     @media (min-width: 1400px) {
