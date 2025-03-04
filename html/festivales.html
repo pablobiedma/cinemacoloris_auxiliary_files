@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/p.png">
+    <title>Festivales - Cinema Coloris</title>
+    <link rel="stylesheet" href="../css/magnus.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333333;
+            color: #fae6c5;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .post {
+            display: flex;
+            align-items: center;
+            background: rgba(33, 33, 33, 0.5);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .post img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .post-content {
+            flex-grow: 1;
+        }
+        .post-title {
+            font-size: 1.5em;
+            color: #fdbd75;
+            text-decoration: none;
+        }
+        .post-title:hover {
+            color: #fae6c5;
+        }
+        .post-excerpt {
+            color: #ccc;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">Festivales</h1>
+    </header>
+    <div class="container" id="posts-container">
+        <!-- Blog posts will be loaded here dynamically -->
+    </div>
+
+    <script>
+        // Sample blog posts (we will replace this with XML-parsed data later)
+        const posts = [
+            {
+                title: "Juliette Binoche pide silencio",
+                excerpt: "Nos acercamos al ecuador del Festival de San Sebastián, y durante varios días hemos podido ver suficientes películas como para...",
+                image: "../images/juliette.jpg",
+                link: "post-juliette-binoche-pide-silencio.html"
+            },
+            {
+                title: "Festival de Venecia. Crónica",
+                excerpt: "El film mudo de 1925 \"Stella Dallas\", restaurado con la mediación del omnipresente Martin Scorsese, inaugurará la 79 edición del festival de...",
+                image: "../images/venecia2022.jpg",
+                link: "venecia2022.html"
+            },
+            {
+                title: "Crimes of the future",
+                excerpt: "La nueva película del director canadiense, que dijo haber recobrado fuerzas tras...",
+                image: "../images/crimes.jpg",
+                link: "post-crimes-of-the-future.html"
+            },
+            {
+                title: "La consagración de la primavera",
+                excerpt: "Hacia la mitad de la película, ya no les queda mucho que decir. En ese punto, una adolescente recién llegada a Madrid se ha convertido, por curiosidad...",
+                image: "../images/primavera.jpg",
+                link: "post-primavera.html"
+            },
+            {
+                title: "Great Yarmouth. Provisional figures.",
+                excerpt: "Tres meses antes del Brexit. Cientos de trabajadores migrantes llegan desde Portugal a la ciudad en busca de un empleo en...",
+                image: "../images/yarmouth.jpg",
+                link: "post-great-yarmouth.html"
+            },
+            {
+                title: "Una película rodada a 2000m de altura. Entrevistamos a su director",
+                excerpt: "Nuestra llegada a San Sebastián fue recibida con entusiasmo por el departamento de prensa del Festival quienes...",
+                image: "../images/thomas.jpg",
+                link: "post-thomas-salvador.html"
+            },
+            {
+                title: "Argentina 1985",
+                excerpt: "Basada en los juicios acaecidos en Argentina tras la dictadura de Perón, Argentina 1985, narra la historia del fiscal que combatió al...",
+                image: "../images/argentina.jpg",
+                link: "post-argentina1985.html"
+            },
+            {
+                title: "Grand marin",
+                excerpt: "Creo que esta es una de las pocas películas que se ha presentado en el festival que tiene una clara conciencia de...",
+                image: "../images/marin.jpg",
+                link: "post-grand-marin.html"
+            },
+            {
+                title: "An Absent Wound. Ciclo de cortometrajes (III)",
+                excerpt: "Un grifo viejo y oxidado, el agua fluye con dificultad por las cañerías, un par de golpes de martillo le vendrían bien para que el agua saliera...",
+                image: "../images/wound.jpg",
+                link: "post-an-absent-wound.html"
+            },
+            {
+                title: "Shadow Animals. Ciclo de cortometrajes (II)",
+                excerpt: "Los juegos de percepción y las leves alteraciones del punto de vista, quizás sean las claves más interesantes del...",
+                image: "../images/shadow.jpg",
+                link: "post-shadow-animals.html"
+            },
+            {
+                title: "The fall y el cine mudo contemporáneo. Ciclo de cortometrajes (I)",
+                excerpt: "Viendo por segunda vez el corto de Jonatan Glazer, pienso en Esculpir en el tiempo y en como Tarkovski, en un momento dado, ataca a...",
+                image: "../images/fall.jpg",
+                link: "post-the-fall.html"
+            },
+            {
+                title: "Crónica del Festival de Cannes.",
+                excerpt: "La película sobre la mujer que se queda embarazada tras mantener relaciones sexuales con un automóvil, pone...",
+                image: "../images/cannes.jpg",
+                link: "post-festival-de-cannes.html"
+            },
+            {
+                title: "Trece primeras y segundas películas competirán por el Premio Kutxabank-New Directors",
+                excerpt: "Todos los filmes de la sección, a la que aún se sumará algún título más, optan a un galardón de 50.000 euros...",
+                image: "../images/galardon.jpg",
+                link: "post-trece-primeras-peliculas.html"
+            },
+        ];
+
+        function loadPosts() {
+            const container = document.getElementById("posts-container");
+            posts.forEach(post => {
+                const postElement = document.createElement("div");
+                postElement.classList.add("post");
+                postElement.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}">
+                    <div class="post-content">
+                        <a href="${post.link}" class="post-title">${post.title}</a>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                    </div>
+                `;
+                container.appendChild(postElement);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", loadPosts);
+    </script>
+
+<footer>
+    <style>
+        
+footer {
+background: black;
+display: table;
+width: 100vw;
+height: 4rem;
+text-align: center;
+padding: 1rem;
+font-family: 'Arial', sans-serif;
+font-size: .875rem;
+}
+.wrapper {
+display: table-cell;
+vertical-align: middle;
+}
+footer small {
+color: #ccc;
+}
+
+
+    </style>
+    <div class="wrapper">
+      <small>&copy;2025 <strong>Revista Cinema Coloris</strong>, All Rights Reserved</small>
+    </div>
+  </footer>
+</html>
+</body>
+</html>
+
+

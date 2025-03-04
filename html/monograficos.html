@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/p.png">
+    <title>Monográficos - Cinema Coloris</title>
+    <link rel="stylesheet" href="../css/magnus.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333333;
+            color: #fae6c5;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .post {
+            display: flex;
+            align-items: center;
+            background: rgba(33, 33, 33, 0.5);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .post img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .post-content {
+            flex-grow: 1;
+        }
+        .post-title {
+            font-size: 1.5em;
+            color: #fdbd75;
+            text-decoration: none;
+        }
+        .post-title:hover {
+            color: #fae6c5;
+        }
+        .post-excerpt {
+            color: #ccc;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">Monográficos</h1>
+    </header>
+    <div class="container" id="posts-container">
+        <!-- Blog posts will be loaded here dynamically -->
+    </div>
+
+    <script>
+        // Sample blog posts (we will replace this with XML-parsed data later)
+        const posts = [
+            {
+                title: "Sobre Confindencias (1974) dir. Luchino Visconti",
+                excerpt: "Habían pasado pocos meses desde que Luchino Visconti viera a la muerte frente a...",
+                image: "../images/confidencias.jpg",
+                link: "post-confidencias.html"
+            },
+            {
+                title: "Escenas de cine (I)",
+                excerpt: "Una señora, quizás la señora más apoteósica de la historia del cine, entra en un bar con...",
+                image: "../images/mm.jpg",
+                link: "post-escenas-de-cine-1.html"
+            },
+            {
+                title: "Alcaparras y los vídeos del abuelo",
+                excerpt: "Hace ya algún tiempo que el cine español ha tomado la vía fácil, ese...",
+                image: "../images/alcaparras.jpg",
+                link: "post-alcaparras.html"
+            },
+            {
+                title: "Revenge, una anomalía del género",
+                excerpt: "A lo largo de las décadas de los sesenta y los setenta, el mercado internacional estaba cambiando, todo debido a...",
+                image: "../images/revenge.jpg",
+                link: "post-revenge-anomalia-del-genero.html"
+            },
+            {
+                title: "Goodbye Dragon Inn y el cine sobre el cine",
+                excerpt: "Hay un algo sentido, manifiesto y mutuo en los instantes compartidos en los que los personajes de...",
+                image: "../images/dragon.jpg",
+                link: "post-goodbye-dragon-inn.html"
+            },
+
+            {
+                title: "El chico de 100 años",
+                excerpt: "Un análisis sobre la obra de Chaplin, El Chico, (1921)...",
+                image: "../images/el-chico.jpg",
+                link: "post-el-chico.html"
+            },
+            {
+                title: "Humphrey Bogart en albornoz",
+                excerpt: "El gran Lebowsky y el cine negro. En 1974, Roman Polanski estrenó Chinatown, una película que revolucionaría...",
+                image: "../images/elgran.jpg",
+                link: "post-humphrey-bogart-en-albornoz.html"
+            },
+            {
+                title: "América, América. El sueño americano y la imposibilidad de prosperar",
+                excerpt: "Esta película versa sobre la idealizada imagen de EEUU, que llegaba con bastante...",
+                image: "../images/america.jpg",
+                link: "post-america-america.html"
+            },
+            {
+                title: "La ley del silencio. Análisis",
+                excerpt: "El argumento de la película es un reflejo de la propia historia del director, cuando fue ante el Comité de...",
+                image: "../images/silencio.jpg",
+                link: "post-la-ley-del-silencio.html"
+            },
+            {
+                title: "El cuento del limonero",
+                excerpt: "Yo empecé a rodar cosas para gustar a la gente, para complacer, considero que de ahí nace toda obra: del querer ser...",
+                image: "../images/limonero.jpg",
+                link: "post-el-cuento-del-limonero.html"
+            },
+            {
+                title: "Dersu Uzala. La vejez y las fases del duelo",
+                excerpt: "Esta historia, desde el primer momento nos deja un mensaje muy desolador, el ineludible paso del tiempo y...",
+                image: "../images/dersu.jpg",
+                link: "post-dersu-uzala.html"
+            },
+            {
+                title: "Mizoguchi y la mujer de bambú",
+                excerpt: "Para entender el tratamiento de la mujer que Mizoguchi plasma en sus películas, debemos retrotraernos a...",
+                image: "../images/mizoguchi.jpg",
+                link: "post-mizoguchi-y-la-mujer-de-bambu.html"
+            },
+            {
+                title: "El Irlandés y Érase una vez en América. Reflejos. (I)",
+                excerpt: "El tema clave en los personajes protagonistas de Scorsese, es la culpa y...",
+                image: "../images/irlandes2.jpg",
+                link: "post-irlandes-america-1.html"
+            },
+            {
+                title: "El Irlandés y Erasé una vez en América. Reflejos. (II)",
+                excerpt: "Un factor clave para entender “Erase una vez en América”, es la estructura circular que al final...",
+                image: "../images/irlandes.jpg",
+                link: "post-irlandes-america-2.html"
+            },
+            {
+                title: "Al este del Edén",
+                excerpt: "En un pueblecito costero en Estados Unidos, ajeno a una lejana guerra que les acabará llegando...",
+                image: "../images/eden.jpg",
+                link: "post-este-del-eden.html"
+            },
+            {
+                title: "Reflejos. \"Platoon\" y \"Apocalypse now\"",
+                excerpt: "Platoon se vale continuamente de planos cerrados, cámaras en mano, formas agresivas que...",
+                image: "../images/platoon.jpg",
+                link: "post-platoon-apocalypse.html"
+            },
+            {
+                title: "David O. Selznick. Gigantes de hojalata",
+                excerpt: "No conseguirás conmover otros corazones si del corazón nada te sale...",
+                image: "../images/selznick.jpg",
+                link: "post-selznick.html"
+            },
+            {
+                title: "Takeshi Kitano. Un poeta de la violencia",
+                excerpt: "La violencia tiene que hacer daño, y cuando es más dolorosa entonces resulta aborrecible...",
+                image: "../images/takeshi.jpg",
+                link: "post-takeshi.html"
+            },
+            {
+                title: "Breve comentario sobre Jennie",
+                excerpt: "Un pintor es un solitario. Un solitario será con mucha seguridad un ser disipado, que como Bukowski se alimenta...",
+                image: "../images/jennie.jpg",
+                link: "post-jennie.html"
+            },
+            {
+                title: "Sobre la trilogía de Apu",
+                excerpt: "Las tres obras de Satyajit Ray que conforman la trilogía de Apu, son una obra maestra del...",
+                image: "../images/apu.jpg",
+                link: "post-trilogia-apu.html"
+            },
+            {
+                title: "Max Ophüls. \"El placer\" (1)",
+                excerpt: "El decía que el cine de época permitía liberar las grandes líneas sentimentales porque...",
+                image: "../images/placer1.jpg",
+                link: "post-el-placer-1.html"
+            },
+            {
+                title: "Max Ophüls. \"El placer\" (2)",
+                excerpt: "Centrando la idea de movimiento constante en los planos estáticos, el resultado es...",
+                image: "../images/placer2.jpg",
+                link: "post-placer-2.html"
+            },
+            {
+                title: "La Trilogía de Wong Kar Wai",
+                excerpt: "Todo pasajero viajando a 2046 tiene la misma intención. Quieren recapturar los recuerdos perdidos, porque...",
+                image: "../images/wong.jpg",
+                link: "post-wong-kar-wai.html"
+            }
+        ];
+
+        function loadPosts() {
+            const container = document.getElementById("posts-container");
+            posts.forEach(post => {
+                const postElement = document.createElement("div");
+                postElement.classList.add("post");
+                postElement.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}">
+                    <div class="post-content">
+                        <a href="${post.link}" class="post-title">${post.title}</a>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                    </div>
+                `;
+                container.appendChild(postElement);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", loadPosts);
+    </script>
+<footer>
+    <style>
+        
+footer {
+background: black;
+display: table;
+width: 100vw;
+height: 4rem;
+text-align: center;
+padding: 1rem;
+font-family: 'Arial', sans-serif;
+font-size: .875rem;
+}
+.wrapper {
+display: table-cell;
+vertical-align: middle;
+}
+footer small {
+color: #ccc;
+}
+
+
+    </style>
+    <div class="wrapper">
+      <small>&copy;2025 <strong>Revista Cinema Coloris</strong>, All Rights Reserved</small>
+    </div>
+  </footer>
+</html>
+</body>
+</html>
+
+
+

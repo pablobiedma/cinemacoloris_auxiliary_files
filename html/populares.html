@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/p.png">
     <title>Populares - Cinema Coloris</title>
     <link rel="stylesheet" href="../css/magnus.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -60,7 +61,29 @@
 
     <script>
         // Sample blog posts (we will replace this with XML-parsed data later)
-        const posts = [
+        const posts = [            {
+                title: "John Ford. Filmar la existencia.",
+                excerpt: "Frank Capra aborda en la década de los 30 y hasta su entrada en la Segunda Guerra Mundial, una serie de temas sociales y políticos, conflictos advenid...",
+                image: "https://1.bp.blogspot.com/-eRw334F3EaM/YEp34lv_5XI/AAAAAAAAARM/Os0VqRTYWvwzS4-kQX2DLhIkqBp02Lj7wCLcBGAsYHQ/w312-h408/FOTO%2BJOHN%2BFORD.png",
+                link: "john-ford-filmar-la-existencia.html"
+            },{
+                title: "Sobre la trilogía de Apu",
+                excerpt: "Las tres obras de Satyajit Ray que conforman la trilogía de Apu, son una obra maestra del...",
+                image: "../images/apu.jpg",
+                link: "post-trilogia-apu.html"
+            },
+            {
+                title: "América, América. El sueño americano y la imposibilidad de prosperar",
+                excerpt: "Esta película versa sobre la idealizada imagen de EEUU, que llegaba con bastante...",
+                image: "../images/america.jpg",
+                link: "post-america-america.html"
+            },
+            {
+                title: "Alcaparras y los vídeos del abuelo",
+                excerpt: "Hace ya algún tiempo que el cine español ha tomado la vía fácil, ese...",
+                image: "../images/alcaparras.jpg",
+                link: "post-alcaparras.html"
+            },
             {
                 title: "El chico de 100 años",
                 excerpt: "Un análisis sobre la obra de Chaplin, El Chico, (1921).",
@@ -72,7 +95,49 @@
                 excerpt: "Exploramos el conflicto moral en 'El manantial de la doncella' de Bergman.",
                 image: "../images/manantial.jpg",
                 link: "post-limites-venganza.html"
-            }
+            },
+            {
+                title: "Pequeñas esperanzas",
+                excerpt: "22 de Diciembre de 1965. David Lean irrumpe en las salas con el estreno del año; “Doctor Zhivago”, sus dos predecesores...",
+                image: "https://blogger.googleusercontent.com/img/a/AVvXsEguy3AOFr_4XFBkd09uo_vcq2lHgQKhIbNuduO4UAZ-IahFC5Zppq77e3N4PxN0eSewW2WwT2k-LAfyNfTi_dCeqgs_cwJ0EOLCK8hJhmM0YM8vT63FFhcV7tztdj6CcLv2GfX4xcqI_gEqR1XltVenU22DYmGUsqju7dDQo7LuqPwW85T3rtZck8EIWw=w396-h495",
+                link: "pequenas-esperanzas.html"
+            },
+            {
+                title: "David O. Selznick. Gigantes de hojalata",
+                excerpt: "No conseguirás conmover otros corazones si del corazón nada te sale...",
+                image: "../images/selznick.jpg",
+                link: "post-selznick.html"
+            },
+            {
+                title: "Entrevista a Eduardo Torres-Dulce (I)",
+                excerpt: "En el momento actual, ¿cómo introducirías a John Ford a alguien que lo desconozca?",
+                image: "../images/torres.jpg",
+                link: "post-eduardo-torres-dulce-1.html"
+            },
+            {
+                title: "Entrevista a Eduardo Torres Dulce (II)",
+                excerpt: "John Ford, siempre con esa terquedad y personalidad tan opaca, se refería a su trabajo cuando...",
+                image: "../images/torres.jpg",
+                link: "post-eduardo-torres-dulce-2.html"
+            },
+            {
+                title: "Filmar lo desconocido",
+                excerpt: "Hay una tendencia en el cine (y en la literatura) que se encuentra en constante ascenso desde hace varias décadas...",
+                image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwiFufMAqfZ7hb5UjCWl9XHycfe0n-1rbkfPiwSTVD6unK5YIqObnk09VQzgjUQ7GpeoLyJSfOpmNmVKhXiyq2YhvlNF-1xhJaDxYXUWWk-Yb6jGSyb98ZXT_1Nz6xuu78PLZW3uxpzK7PeZr49ehDwMFpulb2pMtXXYxDrMFTAWmPyszZMigXmaGR2w/w262-h371/ART%C3%8DCULO%20HUSTON.jpg",
+                link: "filmar-lo-desconocido.html"
+            },
+            {
+                title: "Leer a Ford.",
+                excerpt: "En el comienzo de El mundo como voluntad y representación, Schopenhauer escribe los siguiente...",
+                image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEht7c-SNUzecp4N_uLzzZXFGdLwrl9wcuOByCNs2mbHFOnrYQn9-smoIvbEConBQbbfBue27FkCLmH1CauWssDUurauP3C8cHBBVbDL_vSoRcz_i13QrH291wjoRcFOtG-S-OotoIl1Ji8rSRWW7BFdzL_8nEnOq7icoMNTwRb5ZfUK8896I9rdXsq5Ew/w326-h461/JOHN%20FORD.jpg",
+                link: "sobre-leer-ford.html"
+            },
+            {
+                title: "La Voz del Noir",
+                excerpt: "Los diálogos de Chandler o Hammet son una seña de las novelas hard-boiled, plagados de comentarios inteligentes, dobles...",
+                image: "https://1.bp.blogspot.com/-iU7k_Z7tITI/YBFSDCqsGjI/AAAAAAAAbAY/BLuQ88Pqm5EMU2ESY1yUj5L981ycv7nwACLcBGAsYHQ/s320/Voz%2Bdel%2BNoir.png",
+                link: "la-voz-del-noir.html"
+            },
         ];
 
         function loadPosts() {

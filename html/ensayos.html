@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/p.png">
+    <title>Ensayos - Cinema Coloris</title>
+    <link rel="stylesheet" href="../css/magnus.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333333;
+            color: #fae6c5;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .post {
+            display: flex;
+            align-items: center;
+            background: rgba(33, 33, 33, 0.5);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .post img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .post-content {
+            flex-grow: 1;
+        }
+        .post-title {
+            font-size: 1.5em;
+            color: #fdbd75;
+            text-decoration: none;
+        }
+        .post-title:hover {
+            color: #fae6c5;
+        }
+        .post-excerpt {
+            color: #ccc;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">Ensayos</h1>
+    </header>
+    <div class="container" id="posts-container">
+        <!-- Blog posts will be loaded here dynamically -->
+    </div>
+
+    <script>
+        const posts = [
+            {
+                title: "Filmar lo desconocido",
+                excerpt: "Hay una tendencia en el cine (y en la literatura) que se encuentra en constante ascenso desde hace varias décadas...",
+                image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwiFufMAqfZ7hb5UjCWl9XHycfe0n-1rbkfPiwSTVD6unK5YIqObnk09VQzgjUQ7GpeoLyJSfOpmNmVKhXiyq2YhvlNF-1xhJaDxYXUWWk-Yb6jGSyb98ZXT_1Nz6xuu78PLZW3uxpzK7PeZr49ehDwMFpulb2pMtXXYxDrMFTAWmPyszZMigXmaGR2w/w262-h371/ART%C3%8DCULO%20HUSTON.jpg",
+                link: "filmar-lo-desconocido.html"
+            },
+            {
+                title: "Leer a Ford.",
+                excerpt: "En el comienzo de El mundo como voluntad y representación, Schopenhauer escribe los siguiente...",
+                image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEht7c-SNUzecp4N_uLzzZXFGdLwrl9wcuOByCNs2mbHFOnrYQn9-smoIvbEConBQbbfBue27FkCLmH1CauWssDUurauP3C8cHBBVbDL_vSoRcz_i13QrH291wjoRcFOtG-S-OotoIl1Ji8rSRWW7BFdzL_8nEnOq7icoMNTwRb5ZfUK8896I9rdXsq5Ew/w326-h461/JOHN%20FORD.jpg",
+                link: "sobre-leer-ford.html"
+            },
+            {
+                title: "La dualidad en El jardín de las delicias y El Mago de Oz",
+                excerpt: "Del famoso tríptico de El Bosco se han convertido en icónicas sus coloridas e inquietantes figuras...",
+                image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg157gmQqN0wyvIKwuazhFDXJ9yiXK9MoDiw6PXB8fCoyMt__yragBoZ6SXu598L8aUVc1m8in9PuPHSTHSC32aD0KnOF83ya7kmwWHhYgB4bP3ISUmXsfNjEHTDF-XJ8btzIYWsm9u-vd7h8GavZbEEGb7s4LnmoWrwTsE5jeCSgCAzwtUzGC1hIFzOQ/w382-h450/BOSCO.jpg",
+                link: "la-dualidad-en-el-jardin-de-las.html"
+            },
+            {
+                title: "La ausencia del personaje principal en Playtime de Jacques Tati.",
+                excerpt: "Este artículo trata la ausencia del personaje principal en las dos primeras secuencias de la película Playtime (1967) de Jacques Tati...",
+                image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiELbd2jT1wK_w0MX1I9DIj9COjlyeHZeRpW5dXjK6IpiC6_jCVLJfImfLtzaUKPxm7bPQgETLGWGK7eByK0B5HvQWUsLvT8Sf1i5Hib6ux0sZ5u2cRsUirWTfjmbg_nu7pruIhT3jk8QYwIACBm14LcZU9mwGytx8E-3YdPzGyRlkKXBC7_itQxVk0DA/w409-h447/49-Jacques-Tati-1967-Playtime.png",
+                link: "la-ausencia-del-personaje-principal-en.html"
+            },
+            {
+                title: "Ensayo sobre la transgresión de género. “Abracadabra” (2017) de Pablo Berger.",
+                excerpt: "Se podría considerar la comedia respecto al cine, uno de los géneros más prolíficos de este arte. No tanto por sus capacidades de arrastrarse hacia un...",
+                image: "https://blogger.googleusercontent.com/img/a/AVvXsEho-YwX6vNjhuk3M2T8OQ2SeSXeVJeam88UiEO8FAK-yjOTTVkMRHtV7sKa4htT7wHwzwQXDkJV4uIwkSbSBab_Qv_qQrmQurzgyjougrlXt57j2Wi5SqxUu0Vv4pGquGyqEIxE52oST0D0khee8wX9diTCi91Ek3bMFvcam7AefGRFyK5QUnG8flTKFA=w377-h423",
+                link: "ensayo-sobre-la-transgresion-de-genero.html"
+            },
+            {
+                title: "El terror a lo Haneke",
+                excerpt: "“Plasmar el sufrimiento de forma bella es irreal, mentir” - Michael Haneke. Resulta muy interesante cómo Haneke reinterpreta las claves del terror...",
+                image: "https://blogger.googleusercontent.com/img/a/AVvXsEi__k8xiUJOzT_vTDVgGBWNFVwNM0ADjAo3jVH5uXW2wCPnZSuvYPpQyjOnGYUtkJIhykUEg5dc46ttZENuChJGMgl0Vc5cc11dx7aDdrOiv2AQEdGJ52HCFzgoPmDuVDVW9-G6EQdsUoZdwHF5a4SogaOuv7kvWRBBU8AbW12I4sq7QztP6glWKBv2mw=w295-h400",
+                link: "el-terror-lo-haneke.html"
+            },
+            {
+                title: "El instante (IV). Prospección",
+                excerpt: "En el cine más reciente que he podido ver, cada vez observo con más condescendencia una mayoría que prefiere el...",
+                image: "https://blogger.googleusercontent.com/img/a/AVvXsEgnSVcTMshTihOk45lDzjUjxQo1vEd97OZh4ThimdSUUj7lc6NoTlgCcFv0i_ZSjmHsb5Lpud6x_BjxiyMN4epAnzw2x_ux-y1WKk6m3BOAyAz_mzS0drhJ1TpWb3ppLesWL6R0hTUPPcp5s1mwiqJpShR7fwlql5TOiUo1rS_3_Hjp0N5HWkYA_6AyvQ=w292-h385",
+                link: "el-instante-iv-prospeccion.html"
+            },
+            {
+                title: "El instante (III)",
+                excerpt: "El robo del lenguaje. El escritor ruso Gogol, destruyó la segunda parte de su libro Almas muertas, porque de alguna forma misteriosa el libro sabía más...",
+                image: "https://blogger.googleusercontent.com/img/a/AVvXsEhXTe78ybdIS-KKZcsf2f6lNE7YPObMdIdvyMdydVcQ-I7mG4EHrSdZ7BA2pW17ZIX_zUFPhg4_ZViQNN14zbs16aZSYwhn8yYlkSWSGiTeIm6w6lsmAIk7RYZxdwkV43N_Q4xlnxqitDPAUYyF71wyXRholpNxO37Jdqy0YKAuF9mxwI6Vjq-8slnP3w=w375-h526",
+                link: "el-instante-iii.html"
+            },
+            {
+                title: "Los límites de la venganza en el mundo de lo injusto",
+                excerpt: "Exploramos el conflicto moral en 'El Manantial de la doncella' de Bergman...",
+                image: "../images/manantial.jpg",
+                link: "post-limites-venganza.html"
+            },
+            {
+                title: "El futuro de la exhibición audiovisual en España",
+                excerpt: "Tras la crisis sanitaria surgida como consecuencia del Covid-19 España mantuvo un Estado de Alarma que...",
+                image: "https://lh3.googleusercontent.com/-YX393nGakBM/YZFbNM6MedI/AAAAAAAAAdA/QoXySGFVQr0cc3XyQ9UG3UvdAxzUhF51QCLcBGAsYHQ/w246-h343/movie-theaters-coronvirus.png",
+                link: "el-futuro-de-la-exhibicion-audiovisual.html"
+            },
+            {
+                title: "Pequeñas esperanzas",
+                excerpt: "22 de Diciembre de 1965. David Lean irrumpe en las salas con el estreno del año; “Doctor Zhivago”, sus dos predecesores...",
+                image: "https://blogger.googleusercontent.com/img/a/AVvXsEguy3AOFr_4XFBkd09uo_vcq2lHgQKhIbNuduO4UAZ-IahFC5Zppq77e3N4PxN0eSewW2WwT2k-LAfyNfTi_dCeqgs_cwJ0EOLCK8hJhmM0YM8vT63FFhcV7tztdj6CcLv2GfX4xcqI_gEqR1XltVenU22DYmGUsqju7dDQo7LuqPwW85T3rtZck8EIWw=w396-h495",
+                link: "pequenas-esperanzas.html"
+            },
+            {
+                title: "La levedad del gris",
+                excerpt: "Desde pequeñita, una de las cosas que más me ha llamado la atención es cómo el mundo parece apagarse con nosotros...",
+                image: "https://1.bp.blogspot.com/-k8j2aQQf87Q/YTHpKj4zlpI/AAAAAAAAAYQ/g3c8WfaADYMerHzMoOFppE208-UlsRrXwCLcBGAsYHQ/s320/WhatsApp%2BImage%2B2021-09-02%2Bat%2B18.07.37.jpeg",
+                link: "la-levedad-del-gris.html"
+            },
+            {
+                title: "El instante (II)",
+                excerpt: "Los ciegos serán felices. Al inicio de Notorius, Ingrid Bergman recibe el siguiente consejo: «Necesitarás tus ojos y oídos». Ojos y oídos que...",
+                image: "https://1.bp.blogspot.com/-euxBO6wBUvo/YLz-OPvSrhI/AAAAAAAAAVQ/hg15wVhzoVggSBgTDPQxLzAnwJfSWy1ygCLcBGAsYHQ/w279-h419/clasico.png",
+                link: "el-instante-ii.html"
+            },
+            {
+                title: "El instante (I)",
+                excerpt: "Plegarias desatendidas. El hastío hace los días indistinguibles y cada tarde parece la misma, sin embargo, los grilletes relajan su presión y dejan prog...",
+                image: "https://1.bp.blogspot.com/-f6yTE7PFq4g/YI8hWjtRx8I/AAAAAAAAATU/cziifTOEfQEQjsuzRZGXm4BubYT9ZgDqgCLcBGAsYHQ/s320/PORTADA%2BBOYERO.png",
+                link: "el-instante-i.html"
+            },
+            {
+                title: "Plano Tati",
+                excerpt: "Si existe un plano Tati, como lo hace un plano Ozu, sería un plano general, en ocasiones un gran plano general, que representa de forma absoluta...",
+                image: "https://1.bp.blogspot.com/-hEYSzbaqf4U/YHXWtlSrZ_I/AAAAAAAAASk/Fc-svloAerEof1FC9YVAEYINJrPj2fuRgCLcBGAsYHQ/w295-h443/TATI.png",
+                link: "plano-tati.html"
+            },
+            {
+                title: "John Ford. Filmar la existencia.",
+                excerpt: "Frank Capra aborda en la década de los 30 y hasta su entrada en la Segunda Guerra Mundial, una serie de temas sociales y políticos, conflictos advenid...",
+                image: "https://1.bp.blogspot.com/-eRw334F3EaM/YEp34lv_5XI/AAAAAAAAARM/Os0VqRTYWvwzS4-kQX2DLhIkqBp02Lj7wCLcBGAsYHQ/w312-h408/FOTO%2BJOHN%2BFORD.png",
+                link: "john-ford-filmar-la-existencia.html"
+            },
+            {
+                title: "EL CINE DE VĚRA CHYTILOVÁ: LIBERACIÓN A TRAVÉS DEL PRIMITIVISMO (2)",
+                excerpt: "Pasada la primera etapa de Věra Chytilova, la directora checa retoma en Something Different (1943), esas historias de mujeres contemporáneas desde una...",
+                image: "https://1.bp.blogspot.com/-8yDydSHa8X0/YDViSTCJbqI/AAAAAAAAAQM/FivEJufuDZYNr44wQyEQsZXvhGh8eVPpQCLcBGAsYHQ/s320/peliculas-alternativas-sedmikrasky%2B%25282%2529.png",
+                link: "el-cine-de-vera-chytilova-liberacion_23.html"
+            },
+            {
+                title: "El cine de Věra Chytilová: Liberación a través del primitivismo (1)",
+                excerpt: "Tras un duro periodo de postguerra, los años 60 llegaron a una Europa devastada y pobre, trayendo consigo un clima revolucionario s...",
+                image: "https://1.bp.blogspot.com/-n-RZghxA-b8/YCwjnEW1hlI/AAAAAAAAcIc/h8fSw3kag00iz8_VJ85R0MIz8WYnYrHBQCLcBGAsYHQ/w320-h400/GAC_Daisies1.png",
+                link: "el-cine-de-vera-chytilova-liberacion.html"
+            },
+            {
+                title: "Sobre el tercer acto (III)",
+                excerpt: "Sobre el tercer acto (III) \"El hombre que mató Liberty Valance\" La mirada de John Ford sobre el western no se ha entristecido con el tiempo...",
+                image: "https://1.bp.blogspot.com/-0-9Odc4BgNg/YB15R6yX7XI/AAAAAAAAALY/uFJ4gRdnmO4QMyS_V1roxS2m4HjyfYR0gCLcBGAsYHQ/w258-h304/Liberty%2BValance%2BREAL.png",
+                link: "sobre-el-tercer-acto-iii.html"
+            },
+            {
+                title: "La poética de Kitano",
+                excerpt: "\"Hay un vacío en el que podemos penetrar y que podemos llenar en la plena medida de nuestra emoción estética.” - Kakuzo, Okakura...",
+                image: "https://1.bp.blogspot.com/-9dIT775-9Xo/YBg-KXpgpEI/AAAAAAAAbxc/lLxPnN6l3kYOAjji3lv9I7VLJz96xeJsgCLcBGAsYHQ/w320-h400/dolls.png",
+                link: "la-poetica-de-kitano.html"
+            },
+            {
+                title: "Sobre el tercer acto (II)",
+                excerpt: "\"Cabalgando en solitario\" (1959) dir. Budd Boetticher La película teje una serie de acontecimientos que, desde el inicio, impulsan la interacción de su...",
+                image: "https://1.bp.blogspot.com/-cjeB-EO1fi0/YBgy6QXClQI/AAAAAAAAAK0/QGZkrqTx1hs_bEXgltra2188ed2NGIyiwCLcBGAsYHQ/s400/3er%2BActo%2B%25282%2529.png",
+                link: "sobre-el-tercer-acto-ii.html"
+            },
+            {
+                title: "Sobre el tercer acto (I)",
+                excerpt: "\"El día de los forajidos\" (1959) dir. André de Toth André de Toth, desconocido maestro del cine clásico, se traslada al western en varias ocasiones...",
+                image: "https://1.bp.blogspot.com/-TWUOomDRMkk/YBFP_vjFswI/AAAAAAAAbAM/2cBwLXVFa6Iowds7e_f7z9uxA2hcshmSQCLcBGAsYHQ/s320/3er%2BActo%2B%25281%2529.png",
+                link: "sobre-el-tercer-acto.html"
+            },
+            {
+                title: "Sobre el género deportivo",
+                excerpt: "Parece que, al menos hasta el día de hoy, el deporte y el cine son dos piezas de un puzle que no han terminado de encajar, al menos tan bien como pare...",
+                image: "https://lh3.googleusercontent.com/-j3cyDYEibQM/YBBpnOh0vSI/AAAAAAAAa_g/P1PSQ6J6XA83sgU_lMkxFy17hbT0e4iFQCLcBGAsYHQ/w305-h400/Cinema%2BColoris%2BPedro.png",
+                link: "sobre-el-genero-deportivo.html"
+            },
+            {
+                title: "La Voz del Noir",
+                excerpt: "Los diálogos de Chandler o Hammet son una seña de las novelas hard-boiled, plagados de comentarios inteligentes, dobles...",
+                image: "https://1.bp.blogspot.com/-iU7k_Z7tITI/YBFSDCqsGjI/AAAAAAAAbAY/BLuQ88Pqm5EMU2ESY1yUj5L981ycv7nwACLcBGAsYHQ/s320/Voz%2Bdel%2BNoir.png",
+                link: "la-voz-del-noir.html"
+            },
+            {
+                title: "Breve reflexión sobre el oficio del guionista",
+                excerpt: "En el pasado cineforum, donde pudimos ver “Paprika”, de Satoshi Kon, el debate posterior al visionado giró entorno a temas relacionados esencialmente...",
+                image: "https://1.bp.blogspot.com/-FjnZRXuCygo/YAYvZuV987I/AAAAAAAAAEA/ltSUA4cNkbMpuIQHHUX_wR9ocfZqqldGACLcBGAsYHQ/w289-h400/4bbaedefca45666e8850b33382e22608.jpg",
+                link: "breve-reflexion-sobre-el-oficio-del-guionista.html"
+            }
+        ];
+
+        function loadPosts() {
+            const container = document.getElementById("posts-container");
+            posts.forEach(post => {
+                const postElement = document.createElement("div");
+                postElement.classList.add("post");
+                postElement.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}">
+                    <div class="post-content">
+                        <a href="${post.link}" class="post-title">${post.title}</a>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                    </div>
+                `;
+                container.appendChild(postElement);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", loadPosts);
+    </script>
+<footer>
+    <style>
+        
+footer {
+background: black;
+display: table;
+width: 100vw;
+height: 4rem;
+text-align: center;
+padding: 1rem;
+font-family: 'Arial', sans-serif;
+font-size: .875rem;
+}
+.wrapper {
+display: table-cell;
+vertical-align: middle;
+}
+footer small {
+color: #ccc;
+}
+
+
+    </style>
+    <div class="wrapper">
+      <small>&copy;2025 <strong>Revista Cinema Coloris</strong>, All Rights Reserved</small>
+    </div>
+  </footer>
+</html>
+</body>
+</html>
+
+
+
+

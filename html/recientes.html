@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/p.png">
+    <title>Recientes - Cinema Coloris</title>
+    <link rel="stylesheet" href="../css/magnus.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333333;
+            color: #fae6c5;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .post {
+            display: flex;
+            align-items: center;
+            background: rgba(33, 33, 33, 0.5);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .post img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .post-content {
+            flex-grow: 1;
+        }
+        .post-title {
+            font-size: 1.5em;
+            color: #fdbd75;
+            text-decoration: none;
+        }
+        .post-title:hover {
+            color: #fae6c5;
+        }
+        .post-excerpt {
+            color: #ccc;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">Recientes</h1>
+    </header>
+    <div class="container" id="posts-container">
+        <!-- Blog posts will be loaded here dynamically -->
+    </div>
+
+    <script>
+        const posts = [
+            {
+                title: "Filmar lo desconocido",
+                excerpt: "Hay una tendencia en el cine (y en la literatura) que se encuentra en constante ascenso desde hace varias décadas...",
+                image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwiFufMAqfZ7hb5UjCWl9XHycfe0n-1rbkfPiwSTVD6unK5YIqObnk09VQzgjUQ7GpeoLyJSfOpmNmVKhXiyq2YhvlNF-1xhJaDxYXUWWk-Yb6jGSyb98ZXT_1Nz6xuu78PLZW3uxpzK7PeZr49ehDwMFpulb2pMtXXYxDrMFTAWmPyszZMigXmaGR2w/w262-h371/ART%C3%8DCULO%20HUSTON.jpg",
+                link: "filmar-lo-desconocido.html"
+            },
+            {
+                title: "Leer a Ford.",
+                excerpt: "En el comienzo de El mundo como voluntad y representación, Schopenhauer escribe los siguiente...",
+                image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEht7c-SNUzecp4N_uLzzZXFGdLwrl9wcuOByCNs2mbHFOnrYQn9-smoIvbEConBQbbfBue27FkCLmH1CauWssDUurauP3C8cHBBVbDL_vSoRcz_i13QrH291wjoRcFOtG-S-OotoIl1Ji8rSRWW7BFdzL_8nEnOq7icoMNTwRb5ZfUK8896I9rdXsq5Ew/w326-h461/JOHN%20FORD.jpg",
+                link: "sobre-leer-ford.html"
+            },
+            {
+                title: "Una película rodada a 2000m de altura. Entrevistamos a su director",
+                excerpt: "Nuestra llegada a San Sebastián fue recibida con entusiasmo por el departamento de prensa del Festival quienes...",
+                image: "../images/thomas.jpg",
+                link: "post-thomas-salvador.html"
+            },
+            {
+                title: "Sobre Confindencias (1974) dir. Luchino Visconti",
+                excerpt: "Habían pasado pocos meses desde que Luchino Visconti viera a la muerte frente a...",
+                image: "../images/confidencias.jpg",
+                link: "post-confidencias.html"
+            },
+            {
+                title: "Dersu Uzala. La vejez y las fases del duelo",
+                excerpt: "Esta historia, desde el primer momento nos deja un mensaje muy desolador, el ineludible paso del tiempo y...",
+                image: "../images/dersu.jpg",
+                link: "post-dersu-uzala.html"
+            },
+            {
+                title: "El futuro de la exhibición audiovisual en España",
+                excerpt: "Tras la crisis sanitaria surgida como consecuencia del Covid-19 España mantuvo un Estado de Alarma que...",
+                image: "https://lh3.googleusercontent.com/-YX393nGakBM/YZFbNM6MedI/AAAAAAAAAdA/QoXySGFVQr0cc3XyQ9UG3UvdAxzUhF51QCLcBGAsYHQ/w246-h343/movie-theaters-coronvirus.png",
+                link: "el-futuro-de-la-exhibicion-audiovisual.html"
+            },
+            {
+                title: "El Irlandés y Érase una vez en América. Reflejos. (I)",
+                excerpt: "El tema clave en los personajes protagonistas de Scorsese, es la culpa y...",
+                image: "../images/irlandes2.jpg",
+                link: "post-irlandes-america-1.html"
+            },
+            {
+                title: "El Irlandés y Erasé una vez en América. Reflejos. (II)",
+                excerpt: "Un factor clave para entender “Erase una vez en América”, es la estructura circular que al final...",
+                image: "../images/irlandes.jpg",
+                link: "post-irlandes-america-2.html"
+            },
+            {
+                title: "Max Ophüls. \"El placer\" (1)",
+                excerpt: "El decía que el cine de época permitía liberar las grandes líneas sentimentales porque...",
+                image: "../images/placer1.jpg",
+                link: "post-el-placer-1.html"
+            },
+            {
+                title: "Max Ophüls. \"El placer\" (2)",
+                excerpt: "Centrando la idea de movimiento constante en los planos estáticos, el resultado es...",
+                image: "../images/placer2.jpg",
+                link: "post-placer-2.html"
+            },
+            {
+                title: "La Trilogía de Wong Kar Wai",
+                excerpt: "Todo pasajero viajando a 2046 tiene la misma intención. Quieren recapturar los recuerdos perdidos, porque...",
+                image: "../images/wong.jpg",
+                link: "post-wong-kar-wai.html"
+            },
+            {
+                title: "La poética de Kitano",
+                excerpt: "\"Hay un vacío en el que podemos penetrar y que podemos llenar en la plena medida de nuestra emoción estética.” - Kakuzo, Okakura...",
+                image: "https://1.bp.blogspot.com/-9dIT775-9Xo/YBg-KXpgpEI/AAAAAAAAbxc/lLxPnN6l3kYOAjji3lv9I7VLJz96xeJsgCLcBGAsYHQ/w320-h400/dolls.png",
+                link: "la-poetica-de-kitano.html"
+            },
+            {
+                title: "Sobre el tercer acto (II)",
+                excerpt: "\"Cabalgando en solitario\" (1959) dir. Budd Boetticher La película teje una serie de acontecimientos que, desde el inicio, impulsan la interacción de su...",
+                image: "https://1.bp.blogspot.com/-cjeB-EO1fi0/YBgy6QXClQI/AAAAAAAAAK0/QGZkrqTx1hs_bEXgltra2188ed2NGIyiwCLcBGAsYHQ/s400/3er%2BActo%2B%25282%2529.png",
+                link: "sobre-el-tercer-acto-ii.html"
+            },
+            {
+                title: "Sobre el tercer acto (I)",
+                excerpt: "\"El día de los forajidos\" (1959) dir. André de Toth André de Toth, desconocido maestro del cine clásico, se traslada al western en varias ocasiones...",
+                image: "https://1.bp.blogspot.com/-TWUOomDRMkk/YBFP_vjFswI/AAAAAAAAbAM/2cBwLXVFa6Iowds7e_f7z9uxA2hcshmSQCLcBGAsYHQ/s320/3er%2BActo%2B%25281%2529.png",
+                link: "sobre-el-tercer-acto.html"
+            },
+            {
+                title: "Sobre el género deportivo",
+                excerpt: "Parece que, al menos hasta el día de hoy, el deporte y el cine son dos piezas de un puzle que no han terminado de encajar, al menos tan bien como pare...",
+                image: "https://lh3.googleusercontent.com/-j3cyDYEibQM/YBBpnOh0vSI/AAAAAAAAa_g/P1PSQ6J6XA83sgU_lMkxFy17hbT0e4iFQCLcBGAsYHQ/w305-h400/Cinema%2BColoris%2BPedro.png",
+                link: "sobre-el-genero-deportivo.html"
+            },
+            {
+                title: "La Voz del Noir",
+                excerpt: "Los diálogos de Chandler o Hammet son una seña de las novelas hard-boiled, plagados de comentarios inteligentes, dobles...",
+                image: "https://1.bp.blogspot.com/-iU7k_Z7tITI/YBFSDCqsGjI/AAAAAAAAbAY/BLuQ88Pqm5EMU2ESY1yUj5L981ycv7nwACLcBGAsYHQ/s320/Voz%2Bdel%2BNoir.png",
+                link: "la-voz-del-noir.html"
+            }
+        ];
+
+        function loadPosts() {
+            const container = document.getElementById("posts-container");
+            posts.forEach(post => {
+                const postElement = document.createElement("div");
+                postElement.classList.add("post");
+                postElement.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}">
+                    <div class="post-content">
+                        <a href="${post.link}" class="post-title">${post.title}</a>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                    </div>
+                `;
+                container.appendChild(postElement);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", loadPosts);
+    </script>
+<footer>
+    <style>
+        
+footer {
+background: black;
+display: table;
+width: 100vw;
+height: 4rem;
+text-align: center;
+padding: 1rem;
+font-family: 'Arial', sans-serif;
+font-size: .875rem;
+}
+.wrapper {
+display: table-cell;
+vertical-align: middle;
+}
+footer small {
+color: #ccc;
+}
+
+
+    </style>
+    <div class="wrapper">
+      <small>&copy;2025 <strong>Revista Cinema Coloris</strong>, All Rights Reserved</small>
+    </div>
+  </footer>
+</html>
+</body>
+</html>
+
+
+
+
