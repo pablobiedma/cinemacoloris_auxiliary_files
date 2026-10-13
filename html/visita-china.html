@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visita China | Viajes Coloris</title>
+<meta name="description" content="Visita China: viajes a medida por la China auténtica, lejos de las rutas masificadas. Aldeas de Hebei, Zhangjiajie, Chongqing, Sichuan y el Pekín de los vecinos, con dos cineastas de la Revista Cinema Coloris.">
+<meta name="author" content="Revista Cinema Coloris">
+<link rel="shortcut icon" type="image/x-icon" href="../images/p.png">
+<meta property="og:title" content="Visita China · 看见真实的中国">
+<meta property="og:description" content="La China que no sale en los folletos.">
+<meta property="og:image" content="../images/viajes/qianan/fields.jpg">
+<!-- Fonts load without blocking the page (Google Fonts is slow or blocked in mainland China; the fallbacks below take over) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap">
+<style>
+:root{
+  --ink:#1d1916;
+  --stock:#28221e;
+  --film:#141110;
+  --paper:#f1e1c2;
+  --amber:#f0a04b;
+  --seal:#b8382a;       /* cinnabar, used only for the name seal */
+  --mute:#a99b8b;
+  --line:rgba(241,225,194,.16);
+  --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,"Songti SC","Noto Serif CJK SC","Source Han Serif SC",serif;
+  --cjk:"Songti SC","STSong","Noto Serif SC","Noto Serif CJK SC","Source Han Serif SC","SimSun",serif;
+  --edge:"Barlow Condensed","Arial Narrow","PingFang SC","Microsoft YaHei",sans-serif;
+  --gutter:clamp(16px,4vw,56px);
+  --sprocket:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='14'%3E%3Crect x='6' y='2' width='14' height='10' rx='2.5' fill='%23e8dcc6' fill-opacity='.82'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--serif);font-size:clamp(1.05rem,.98rem + .3vw,1.2rem);line-height:1.62;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:99;background:var(--paper);color:var(--ink);padding:8px 12px}
+section{padding:clamp(72px,10vw,140px) 0}
+h2{font-weight:400;font-size:clamp(2.1rem,1.5rem + 2.6vw,3.9rem);line-height:1.04;letter-spacing:-.015em;margin:0 0 .5em}
+h3{font-weight:400}
+.lede{font-size:clamp(1.2rem,1.05rem + .7vw,1.6rem);line-height:1.45;max-width:34ch}
+.cjk{font-family:var(--cjk)}
+.btn{display:inline-block;background:var(--amber);color:var(--ink);text-decoration:none;font-family:var(--edge);font-weight:600;font-size:1.15rem;letter-spacing:.03em;padding:13px 22px;border-radius:3px;border:0;cursor:pointer}
+.btn:hover{background:var(--paper)}
+.btn.ghost{background:none;color:var(--paper);border:1px solid rgba(241,225,194,.45)}
+.btn.ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+/* ---------- header ---------- */
+.top{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;gap:24px;padding:14px var(--gutter);transition:background .4s}
+.top.solid{background:rgba(29,25,22,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.brand{font-family:var(--edge);font-weight:600;font-size:1.05rem;letter-spacing:.04em;text-decoration:none;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.lang,.menu-btn{flex-shrink:0}
+@media (max-width:480px){.brand span{display:none}}
+.brand span{color:var(--amber)}
+.nav{display:flex;gap:22px;margin-left:auto;font-family:var(--edge);font-size:1.02rem;letter-spacing:.02em}
+.nav a{text-decoration:none;opacity:.85}.nav a:hover{opacity:1;color:var(--amber)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--edge)}
+.lang button{background:none;border:0;color:var(--paper);font:inherit;font-size:.95rem;padding:4px 11px;cursor:pointer;opacity:.7}
+.lang button[aria-pressed="true"]{background:var(--paper);color:var(--ink);opacity:1}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--paper);font-family:var(--edge);font-size:1rem;padding:5px 12px;border-radius:999px;margin-left:auto;cursor:pointer;white-space:nowrap}
+@media (max-width:1020px){
+  .top{gap:10px}
+  .menu-btn{display:block}
+  .lang button{padding:4px 8px}
+  .nav{position:fixed;inset:58px 0 auto 0;flex-direction:column;gap:0;background:rgba(29,25,22,.97);padding:8px var(--gutter) 18px;display:none}
+  .nav.open{display:flex}.nav a{padding:10px 0;border-bottom:1px solid var(--line);font-size:1.2rem}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--film)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,16,.5) 0%,rgba(20,17,16,0) 25%,rgba(20,17,16,.15) 50%,rgba(20,17,16,.88) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:clamp(48px,8vh,96px);display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
+.hero h1{font-weight:300;font-size:clamp(3.6rem,12vw,10.5rem);line-height:.9;letter-spacing:-.02em;margin:0 0 .3em}
+.hero p{max-width:36ch;margin:0 0 28px;font-size:clamp(1.15rem,1rem + .6vw,1.5rem);line-height:1.4}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.vertical{font-family:var(--cjk);writing-mode:vertical-rl;font-size:clamp(1.6rem,1rem + 2vw,2.8rem);letter-spacing:.35em;line-height:1;color:var(--paper);margin:0;opacity:.95;text-shadow:0 1px 18px rgba(0,0,0,.35)}
+.hero .credit{position:absolute;z-index:2;right:var(--gutter);top:84px;font-family:var(--edge);color:var(--amber);font-size:.95rem;letter-spacing:.05em}
+@media (max-width:700px){.hero .wrap{grid-template-columns:1fr}.vertical{display:none}}
+
+/* ---------- the other route ---------- */
+.route .head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(40px,5vw,64px)}
+.route .head p{margin:0;max-width:52ch}
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,32px)}
+.versus figure{margin:0 0 18px}
+.versus img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.versus .them img{filter:grayscale(1) contrast(1.05);opacity:.85}
+.versus h3{font-family:var(--edge);font-weight:500;font-size:1.3rem;letter-spacing:.03em;margin:0 0 8px}
+.versus .them h3{color:var(--mute)}.versus .us h3{color:var(--amber)}
+.versus ul{list-style:none;padding:0;margin:0}
+.versus li{padding:11px 0;border-bottom:1px solid var(--line)}
+.versus .them li{color:var(--mute);text-decoration:line-through;text-decoration-color:rgba(169,155,139,.5);text-decoration-thickness:1px}
+@media (max-width:820px){.route .head,.versus{grid-template-columns:1fr}}
+
+/* ---------- destinations ---------- */
+.dests{background:var(--stock)}
+.dest{display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--line)}
+.dest:nth-of-type(even){grid-template-columns:5fr 7fr}
+.dest:nth-of-type(even) .pics{order:2}
+.pics{display:grid;grid-template-columns:2fr 1fr;gap:10px}
+.pics img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2}
+.pics img:first-child{grid-row:span 2}
+.pics img:not(:first-child){aspect-ratio:auto}
+.dest h3{font-size:clamp(1.8rem,1.3rem + 1.6vw,2.7rem);line-height:1.05;margin:0}
+.dest .zh{font-family:var(--cjk);color:var(--amber);font-size:1.2rem;letter-spacing:.25em;margin:.4em 0 .8em}
+.dest p{margin:0 0 .8em;max-width:46ch}
+.dest .tags{font-family:var(--edge);color:var(--mute);font-size:1.02rem;letter-spacing:.02em}
+@media (max-width:820px){.dest,.dest:nth-of-type(even){grid-template-columns:1fr}.dest:nth-of-type(even) .pics{order:0}}
+
+/* ---------- how it works (a real sequence) ---------- */
+.steps{list-style:none;padding:0;margin:clamp(32px,4vw,56px) 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px);counter-reset:s}
+.steps li{counter-increment:s;border-top:1px solid var(--amber);padding-top:14px}
+.steps li::before{content:counter(s);display:block;font-family:var(--edge);color:var(--amber);font-size:2.4rem;line-height:1;margin-bottom:12px}
+.steps h3{font-size:1.45rem;margin:0 0 .3em;line-height:1.15}
+.steps p{margin:0;color:#d9c9ab}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* ---------- institutions / Qian'an case ---------- */
+.inst{background:var(--paper);color:var(--ink)}
+.inst .lede{color:var(--ink)}
+.inst .head{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end}
+.inst .head p{margin:0 0 1em;max-width:54ch}
+.case{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:clamp(36px,5vw,64px)}
+.case figure{margin:0}
+.case img{width:100%;height:100%;object-fit:cover}
+.case .g{grid-column:1/9;grid-row:1/3}
+.case .g img{aspect-ratio:1040/765}
+.gcap{font-family:var(--edge);font-size:1rem;color:#6b5d4f;margin:10px 0 0}
+.case .v{grid-column:9/13;grid-row:1/4;position:relative}
+.case .v video{width:100%;height:100%;object-fit:cover;background:#000;aspect-ratio:9/16}
+.case .p{grid-column:span 2;aspect-ratio:4/5}
+.case .p img{aspect-ratio:4/5}
+.case figcaption{font-family:var(--edge);font-size:.95rem;color:#6b5d4f;margin-top:6px}
+.case-info{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,80px);margin-top:clamp(28px,4vw,48px);align-items:start}
+.case-info dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 22px;border-top:1px solid rgba(29,25,22,.2);padding-top:16px}
+.case-info dt{font-family:var(--edge);color:#7a4a17;font-size:1.05rem;letter-spacing:.02em}
+.case-info dd{margin:0}
+.inst .btn{background:var(--ink);color:var(--paper)}.inst .btn:hover{background:#000}
+.inst .btn.ghost{background:none;color:var(--ink);border-color:rgba(29,25,22,.4)}
+.inst .btn.ghost:hover{border-color:var(--ink)}
+@media (max-width:820px){
+  .inst .head,.case-info{grid-template-columns:1fr}
+  .case .g{grid-column:1/13;grid-row:auto}.case .v{grid-column:1/8;grid-row:auto}.case .p{grid-column:span 4}
+}
+
+/* ---------- reels ---------- */
+.reel-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.vid{position:relative;margin:0}
+.vid video{width:100%;aspect-ratio:9/16;object-fit:cover;background:var(--film);border-radius:4px}
+.vid button.play{position:absolute;left:0;top:0;width:100%;aspect-ratio:9/16;background:transparent;border:0;cursor:pointer;display:grid;place-items:center}
+.vid button.play::after{content:"";width:62px;height:62px;border-radius:50%;background:rgba(29,25,22,.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l9 5-9 5z' fill='%23f1e1c2'/%3E%3C/svg%3E") center/30px no-repeat;border:1px solid rgba(241,225,194,.6)}
+.vid.playing button.play{display:none}
+.vid figcaption{margin-top:10px;line-height:1.3}
+.vid figcaption b{font-weight:500;display:block}
+.vid figcaption span{color:var(--mute);font-style:italic;font-size:.95rem}
+.case .vid figcaption{display:none}
+@media (max-width:1000px){.reel-row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:42%;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity}.vid{scroll-snap-align:start}}
+@media (max-width:600px){.reel-row{grid-auto-columns:64%}}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.sec-head p{margin:0;max-width:46ch;color:var(--mute)}
+
+/* ---------- film strip gallery ---------- */
+.strip{background:var(--film);padding:22px 0;position:relative;margin-bottom:10px}
+.strip::before,.strip::after{content:"";position:absolute;left:0;right:0;height:14px;background:var(--sprocket) repeat-x}
+.strip::before{top:4px}.strip::after{bottom:4px}
+.strip.rev::before,.strip.rev::after{background-position:13px 0}
+.reel{display:flex;gap:12px;overflow-x:auto;padding:4px var(--gutter);scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#4a3f37 transparent}
+.frame{flex:0 0 auto;scroll-snap-align:start;background:none;border:0;padding:0;cursor:zoom-in;color:var(--amber);font-family:var(--edge);text-align:left}
+.frame img{height:clamp(150px,22vw,250px);width:auto;aspect-ratio:3/2;object-fit:cover}
+.frame:hover img{filter:brightness(1.06)}
+.frame span{display:block;font-size:.85rem;letter-spacing:.06em;margin-top:5px;opacity:.9;white-space:nowrap}
+.hint{font-family:var(--edge);color:var(--mute);font-size:.95rem;padding:0 var(--gutter);margin:6px 0 0}
+.gallery{padding-bottom:clamp(40px,6vw,80px)}
+
+/* ---------- about ---------- */
+.about .grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,80px);align-items:center}
+.about figure{margin:0;position:relative}
+.about figure img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.seal{position:absolute;right:-14px;bottom:-14px;width:68px;height:68px;background:var(--seal);color:#f7e9d4;font-family:var(--cjk);font-size:1.45rem;line-height:1;display:grid;place-items:center;writing-mode:vertical-rl;letter-spacing:.08em;border-radius:6px;box-shadow:inset 0 0 0 3px var(--seal),inset 0 0 0 5px #f7e9d4;transform:rotate(-3deg)}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:24px}
+.people h3{font-size:1.5rem;margin:0 0 .2em}
+.people p{margin:0;color:#d9c9ab}
+@media (max-width:820px){.about .grid,.people{grid-template-columns:1fr}.seal{right:8px}}
+
+/* ---------- contact ---------- */
+.contact{background:var(--stock)}
+.contact .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,80px);align-items:start}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;margin-top:28px}
+label{display:flex;flex-direction:column;gap:6px;font-family:var(--edge);font-size:1.05rem;letter-spacing:.02em;color:#e3d2b3}
+label.full{grid-column:1/-1}
+input,select,textarea{font:inherit;font-family:var(--serif);font-size:1.05rem;color:var(--paper);background:var(--ink);border:1px solid rgba(241,225,194,.28);border-radius:3px;padding:11px 12px;letter-spacing:0}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 2px rgba(240,160,75,.3)}
+.form-note{grid-column:1/-1;margin:0;color:var(--mute);font-size:.98rem}
+.card{background:var(--paper);color:var(--ink);padding:clamp(22px,3vw,34px);border-radius:4px}
+.card h3{font-size:1.7rem;line-height:1.1;margin:0 0 10px}
+.card img{width:min(260px,100%);margin:14px 0 18px;border-radius:4px;background:#fff}
+.card a.mail{font-size:1.25rem;word-break:break-all}
+.card p{margin:0 0 10px}
+@media (max-width:820px){.contact .grid{grid-template-columns:1fr}}
+@media (max-width:520px){form{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:34px 0 48px;color:var(--mute);font-size:.98rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{text-decoration:none}footer a:hover{color:var(--amber)}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(14,12,11,.96);display:none;align-items:center;justify-content:center;padding:56px 16px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 0 0 10px var(--film)}
+.lb .x,.lb .p,.lb .n{position:absolute;background:none;border:1px solid var(--line);color:var(--paper);font-family:var(--edge);font-size:1.05rem;padding:6px 14px;border-radius:3px;cursor:pointer}
+.lb .x{top:14px;right:14px}.lb .p{left:14px;bottom:14px}.lb .n{right:14px;bottom:14px}
+.lb .lbcap{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-family:var(--edge);color:var(--amber);letter-spacing:.05em;font-size:.95rem;white-space:nowrap}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html[lang="zh-CN"] body{--serif:var(--cjk)}
+html[lang="zh-CN"] em,html[lang="zh-CN"] .vid figcaption span{font-style:normal}
+html[lang="zh-CN"] .dest .zh{display:none}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+<header class="top" id="top">
+  <a class="brand" href="viajes-coloris.html">Viajes Coloris <span data-i18n="brandSub">Visita China</span></a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="nav" data-i18n="menu">Menú</button>
+  <nav class="nav" id="nav" aria-label="Visita China">
+    <a href="#otra-ruta" data-i18n="navRoute">La otra ruta</a>
+    <a href="#destinos" data-i18n="navDest">Destinos</a>
+    <a href="#como" data-i18n="navHow">Cómo viajamos</a>
+    <a href="#instituciones" data-i18n="navInst">Para instituciones</a>
+    <a href="#reels" data-i18n="navReels">Reels</a>
+    <a href="#contacto" data-i18n="navContact">Contacto</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Idioma / Language / 语言">
+    <button data-lang="es" aria-pressed="true">ES</button><button data-lang="en" aria-pressed="false">EN</button><button data-lang="zh" aria-pressed="false">中文</button>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<div class="hero">
+  <img src="../images/viajes/qianan/fields.jpg" alt="Campos dorados al atardecer y montañas en Qian'an, provincia de Hebei" fetchpriority="high">
+  <span class="credit" data-i18n="heroCredit">Qian'an, Hebei, 2026</span>
+  <div class="wrap">
+    <div>
+      <h1 data-i18n="heroTitle">Visita China</h1>
+      <p data-i18n="heroSub">La China que no sale en los folletos. Viajes a medida por pueblos, montañas y barrios, de la mano de dos cineastas de la Revista Cinema Coloris.</p>
+      <div class="ctas">
+        <a class="btn" href="#contacto" data-i18n="heroBtn1">Planifica tu viaje</a>
+        <a class="btn ghost" href="#destinos" data-i18n="heroBtn2">Ver destinos</a>
+      </div>
+    </div>
+    <p class="vertical" lang="zh-CN">看见真实的中国</p>
+  </div>
+</div>
+
+<!-- THE OTHER ROUTE -->
+<section class="route" id="otra-ruta">
+  <div class="wrap">
+    <div class="head">
+      <h2 data-i18n="routeTitle">Pekín, Xi'an, Shanghái… ¿y después?</h2>
+      <p data-i18n="routeP">Casi todos los tours repiten el mismo triángulo: tres ciudades, autobús, cola, foto y vuelta al hotel. Son lugares extraordinarios, pero así se ven a través de una multitud. Nosotros te llevamos a donde la gente todavía te invita a sentarte, a comer y a quedarte un rato.</p>
+    </div>
+    <div class="versus">
+      <div class="them">
+        <figure><img src="../images/viajes/china/forbidden-silhouettes.jpg" alt="Siluetas de una multitud ante un pabellón de la Ciudad Prohibida" loading="lazy"></figure>
+        <h3 data-i18n="themTitle">El tour de siempre</h3>
+        <ul>
+          <li data-i18n="them1">Las mismas tres ciudades en una semana</li>
+          <li data-i18n="them2">Horarios de autobús y colas en cada parada</li>
+          <li data-i18n="them3">Restaurantes pensados para grupos</li>
+          <li data-i18n="them4">La misma foto que todo el mundo</li>
+        </ul>
+      </div>
+      <div class="us">
+        <figure><img src="../images/viajes/qianan/neighbours.jpg" alt="Vecinos conversando a la sombra de un árbol en Qian'an" loading="lazy"></figure>
+        <h3 data-i18n="usTitle">Visita China</h3>
+        <ul>
+          <li data-i18n="us1">Pueblos, montañas y barrios fuera del circuito</li>
+          <li data-i18n="us2">Grupos pequeños y un ritmo sin prisas</li>
+          <li data-i18n="us3">Comer donde comen los vecinos</li>
+          <li data-i18n="us4">Tu viaje, fotografiado en carrete si lo quieres</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="dests" id="destinos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-i18n="destTitle">Destinos</h2>
+      <p data-i18n="destP">Lugares donde hemos estado con la cámara. Los combinamos a tu medida, para unos días o para varias semanas.</p>
+    </div>
+
+    <article class="dest">
+      <div class="pics">
+        <img src="../images/viajes/qianan/blue-hills.jpg" alt="Montañas azules al anochecer sobre un campo de maíz en Hebei" loading="lazy">
+        <img src="../images/viajes/qianan/grandmother.jpg" alt="Una abuela con su bastón en una aldea de Qian'an" loading="lazy">
+        <img src="../images/viajes/qianan/mason.jpg" alt="Un albañil levanta un muro de ladrillo al sol de la tarde" loading="lazy">
+      </div>
+      <div>
+        <h3 data-i18n="d1t">Qian'an y las aldeas de Hebei</h3>
+        <p class="zh" lang="zh-CN">河北 · 迁安</p>
+        <p data-i18n="d1p">A unas horas de Pekín, el norte rural: montañas que se doblan en capas de azul, campos dorados al atardecer y aldeas donde, si llevas una cámara, los vecinos te paran para charlar y te piden un retrato.</p>
+        <p class="tags" data-i18n="d1g">Aldeas, retratos, atardeceres en el campo</p>
+      </div>
+    </article>
+
+    <article class="dest">
+      <div class="pics">
+        <img src="../images/viajes/china/zhangjiajie-peaks.jpg" alt="Pilares de arenisca entre la niebla en Zhangjiajie" loading="lazy">
+        <img src="../images/viajes/china/village-house.jpg" alt="Una casa antigua de tejado curvo al pie de la montaña" loading="lazy">
+        <img src="../images/viajes/china/monkey.jpg" alt="Un macaco sentado en una rama" loading="lazy">
+      </div>
+      <div>
+        <h3 data-i18n="d2t">Zhangjiajie</h3>
+        <p class="zh" lang="zh-CN">湖南 · 张家界</p>
+        <p data-i18n="d2p">Pilares de arenisca que aparecen y desaparecen entre la niebla. Fuera de los miradores más concurridos hay senderos de bosque, casas de madera, pueblos tujia y algún macaco curioso.</p>
+        <p class="tags" data-i18n="d2g">Montaña, senderismo, pueblos tujia</p>
+      </div>
+    </article>
+
+    <article class="dest">
+      <div class="pics">
+        <img src="../images/viajes/china/chongqing-monorail.jpg" alt="El monorraíl de Chongqing entre rascacielos a contraluz" loading="lazy">
+        <img src="../images/viajes/china/chongqing-towers.jpg" alt="Torres de viviendas apiladas en Chongqing" loading="lazy">
+        <img src="../images/viajes/china/street-vendors.jpg" alt="Vendedoras de comida en una calle con escaleras" loading="lazy">
+      </div>
+      <div>
+        <h3 data-i18n="d3t">Chongqing</h3>
+        <p class="zh" lang="zh-CN">重庆</p>
+        <p data-i18n="d3p">Una ciudad vertical: trenes que atraviesan edificios, barrios colgados de la ladera, escaleras que no terminan y el picante más famoso de China. Cyberpunk por fuera, de toda la vida por dentro.</p>
+        <p class="tags" data-i18n="d3g">Ciudad, comida, fotografía nocturna</p>
+      </div>
+    </article>
+
+    <article class="dest">
+      <div class="pics">
+        <img src="../images/viajes/china/panda.jpg" alt="Un panda gigante descansando sobre una roca entre la vegetación" loading="lazy">
+        <img src="../images/viajes/china/red-panda.jpg" alt="Un panda rojo entre bambúes" loading="lazy">
+        <img src="../images/viajes/china/temple-gate-green.jpg" alt="La puerta de un templo entre árboles en la montaña" loading="lazy">
+      </div>
+      <div>
+        <h3 data-i18n="d4t">Sichuan</h3>
+        <p class="zh" lang="zh-CN">四川</p>
+        <p data-i18n="d4p">Pandas gigantes y pandas rojos, valles de río, templos escondidos en la montaña y casas de té donde la tarde pasa sin mirar el reloj. Se combina muy bien con Chongqing.</p>
+        <p class="tags" data-i18n="d4g">Naturaleza, templos, casas de té</p>
+      </div>
+    </article>
+
+    <article class="dest">
+      <div class="pics">
+        <img src="../images/viajes/china/houhai-swimmers.jpg" alt="Bañistas y vecinos en la orilla del lago Houhai" loading="lazy">
+        <img src="../images/viajes/china/jingshan-frame.jpg" alt="El parque Jingshan enmarcado por una puerta de la Ciudad Prohibida" loading="lazy">
+        <img src="../images/viajes/china/spinning-top.jpg" alt="Un vecino hace girar una peonza con un látigo en un parque" loading="lazy">
+      </div>
+      <div>
+        <h3 data-i18n="d5t">Pekín a pie</h3>
+        <p class="zh" lang="zh-CN">北京</p>
+        <p data-i18n="d5p">Vivimos aquí. Te enseñamos los hutongs, los bañistas de Houhai, los vecinos que bailan y hacen girar peonzas en los parques, y la Ciudad Prohibida también, pero a primera hora y con calma.</p>
+        <p class="tags" data-i18n="d5g">Hutongs, parques, vida de barrio</p>
+      </div>
+    </article>
+
+    <article class="dest">
+      <div class="pics">
+        <img src="../images/viajes/china/tianjin-eye.jpg" alt="La noria de Tianjin sobre el río, en blanco y negro" loading="lazy">
+        <img src="../images/viajes/china/blossom.jpg" alt="Flores de cerezo reflejadas en un canal" loading="lazy">
+        <img src="../images/viajes/china/laundry.jpg" alt="Ropa tendida al sol frente a un bloque de viviendas" loading="lazy">
+      </div>
+      <div>
+        <h3 data-i18n="d6t">Tianjin</h3>
+        <p class="zh" lang="zh-CN">天津</p>
+        <p data-i18n="d6p">A media hora de Pekín en tren de alta velocidad: edificios de las antiguas concesiones europeas, paseos junto al río Hai y una noria construida sobre un puente. Perfecta para una escapada de un día.</p>
+        <p class="tags" data-i18n="d6g">Escapada de un día, arquitectura, río</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="como">
+  <div class="wrap">
+    <h2 data-i18n="howTitle">Cómo viajamos</h2>
+    <p class="lede" data-i18n="howLede">Sin paquetes cerrados. Cada viaje empieza con una conversación.</p>
+    <ol class="steps">
+      <li><h3 data-i18n="s1t">Escríbenos</h3><p data-i18n="s1p">Por WeChat o por email: cuántos sois, cuándo venís y qué os gusta.</p></li>
+      <li><h3 data-i18n="s2t">Diseñamos la ruta</h3><p data-i18n="s2p">Te proponemos un itinerario a medida, con trenes, alojamientos y los lugares que no aparecen en las guías.</p></li>
+      <li><h3 data-i18n="s3t">Viajamos</h3><p data-i18n="s3p">Te acompañamos en el camino o te lo dejamos todo preparado, con contactos locales y nuestro mapa de sitios.</p></li>
+      <li><h3 data-i18n="s4t">Te llevas la película</h3><p data-i18n="s4p">Si quieres, fotografiamos tu viaje en carrete y te enviamos los negativos escaneados.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- INSTITUTIONS / CASE -->
+<section class="inst" id="instituciones">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <h2 data-i18n="instTitle">¿Promocionas un destino?</h2>
+        <p class="lede" data-i18n="instLede">Oficinas de turismo, gobiernos locales y organizadores de eventos nos invitan a contar su región a viajeros de fuera de China.</p>
+      </div>
+      <div>
+        <p data-i18n="instP">Llegamos como fotógrafos extranjeros, hablamos con la gente y volvemos con retratos, paisajes, un reel y una crónica. Lo publicamos en español, inglés y chino, en la revista y en Xiaohongshu, WeChat Channels, Instagram y YouTube.</p>
+        <a class="btn" href="#contacto" data-i18n="instBtn">Invítanos a tu región</a>
+      </div>
+    </div>
+
+    <div class="case" aria-label="Qian'an 2026">
+      <figure class="g"><img src="../images/viajes/qianan/group.jpg" alt="Pablo Biedma, con la cámara, junto a vecinos de una aldea de Qian'an frente a un muro de ladrillo" loading="lazy"></figure>
+      <figure class="v vid"><video src="../images/viajes/reels/qianan.mp4" poster="../images/viajes/reels/qianan.jpg" preload="none" playsinline controls></video><button class="play" aria-label="Reproducir"></button><figcaption>Reel</figcaption></figure>
+      <figure class="p"><img src="../images/viajes/qianan/old-man.jpg" alt="Retrato de un vecino de Qian'an a la sombra" loading="lazy"></figure>
+      <figure class="p"><img src="../images/viajes/qianan/woman-leaves.jpg" alt="Retrato de una vecina entre hojas" loading="lazy"></figure>
+      <figure class="p"><img src="../images/viajes/qianan/pipa.jpg" alt="Una música toca la pipa en un campo" loading="lazy"></figure>
+      <figure class="p"><img src="../images/viajes/qianan/farmer.jpg" alt="Retrato de un campesino frente a una pila de ladrillos" loading="lazy"></figure>
+    </div>
+
+    <p class="gcap" data-i18n="gCap">Con los vecinos que acabábamos de conocer. Pablo es el alto de la cámara.</p>
+    <div class="case-info">
+      <div>
+        <h3 style="font-size:1.8rem;margin:0 0 .4em;line-height:1.1" data-i18n="caseTitle">Caso: Qian'an, Hebei, 2026</h3>
+        <p data-i18n="caseP">Invitados como fotógrafos extranjeros a la Exposición Internacional de Fotografía del Patrimonio Cultural Mundial. Recorrimos las aldeas de alrededor y lo que más nos marcó no fue ningún monumento, sino la gente que encontramos por el camino.</p>
+        <p style="margin-top:20px"><a class="btn ghost" href="https://www.xiaohongshu.com/discovery/item/6abc940d000000000200cd8a" target="_blank" rel="noopener" data-i18n="caseBtn">Ver la publicación en Xiaohongshu</a></p>
+      </div>
+      <dl>
+        <dt data-i18n="dtEvent">Evento</dt><dd lang="zh-CN" class="cjk">2026世界文化遗产国际摄影大展</dd>
+        <dt data-i18n="dtWhere">Lugar</dt><dd data-i18n="ddWhere">Qian'an y aldeas cercanas, Hebei</dd>
+        <dt data-i18n="dtDid">Entregamos</dt><dd data-i18n="ddDid">Serie de retratos y paisajes, reel vertical, publicación en Xiaohongshu (这么近这么美，周末到河北)</dd>
+        <dt data-i18n="dtLang">Idiomas</dt><dd data-i18n="ddLang">Chino, con versión en español e inglés</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- REELS -->
+<section class="reels" id="reels">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-i18n="reelsTitle">China en reels</h2>
+      <p data-i18n="reelsP">Lo que publicamos en Xiaohongshu y WeChat Channels. Con sonido.</p>
+    </div>
+    <div class="reel-row">
+      <figure class="vid"><video src="../images/viajes/reels/beijing.mp4" poster="../images/viajes/reels/beijing.jpg" preload="none" playsinline controls></video><button class="play" aria-label="Reproducir"></button><figcaption><b data-i18n="rBj">Pekín</b><span data-i18n="rBjS">Con la cámara en el autobús</span></figcaption></figure>
+      <figure class="vid"><video src="../images/viajes/reels/guangxi.mp4" poster="../images/viajes/reels/guangxi.jpg" preload="none" playsinline controls></video><button class="play" aria-label="Reproducir"></button><figcaption><b>Guangxi</b><span data-i18n="rGxS">Aquí no hay ningún lago de los cisnes</span></figcaption></figure>
+      <figure class="vid"><video src="../images/viajes/reels/hongkong.mp4" poster="../images/viajes/reels/hongkong.jpg" preload="none" playsinline controls></video><button class="play" aria-label="Reproducir"></button><figcaption><b>Hong Kong</b><span data-i18n="rHkS">Un día empezando temprano</span></figcaption></figure>
+      <figure class="vid"><video src="../images/viajes/reels/shanghai-siff.mp4" poster="../images/viajes/reels/shanghai-siff.jpg" preload="none" playsinline controls></video><button class="play" aria-label="Reproducir"></button><figcaption><b data-i18n="rSh">Shanghái</b><span data-i18n="rShS">Gala de premios del SIFF</span></figcaption></figure>
+      <figure class="vid"><video src="../images/viajes/reels/qianan.mp4" poster="../images/viajes/reels/qianan.jpg" preload="none" playsinline controls></video><button class="play" aria-label="Reproducir"></button><figcaption><b data-i18n="rQianan">Qian'an, Hebei</b><span data-i18n="rQiananS">Fotógrafo invitado, 2026</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FILM GALLERY -->
+<section class="gallery" aria-labelledby="galTitle">
+  <div class="wrap sec-head">
+    <h2 id="galTitle" data-i18n="galTitle">China en carrete</h2>
+    <p data-i18n="galP">Fotogramas de 35 mm de nuestros viajes por el país. Pulsa cualquiera para verlo grande.</p>
+  </div>
+  <div class="strip"><div class="reel" id="reelA"></div></div>
+  <div class="strip rev"><div class="reel" id="reelB"></div></div>
+  <p class="hint" data-i18n="hint">Desliza la tira para ver más fotogramas.</p>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="nosotros">
+  <div class="wrap grid">
+    <figure>
+      <img src="../images/viajes/china/zhangjiajie-pablo.jpg" alt="Pablo Biedma sonriendo con un plumífero ante las montañas de Zhangjiajie" loading="lazy">
+      <span class="seal" lang="zh-CN" aria-hidden="true">田也</span>
+    </figure>
+    <div>
+      <h2 data-i18n="aboutTitle">Quiénes somos</h2>
+      <p class="lede" data-i18n="aboutLede">No somos una agencia de autobuses. Somos dos cineastas que llevan años mirando el mundo a través de un visor.</p>
+      <div class="people">
+        <div><h3>Pablo Biedma <span class="cjk">(田也)</span></h3><p data-i18n="pablo">Cineasta y fotógrafo andaluz. Vive en Pekín y recorre China con una cámara de carrete. Cofundador de la Revista Cinema Coloris.</p></div>
+        <div><h3>Pedro Fuertes</h3><p data-i18n="pedro">Cineasta y fotógrafo. Cofundador de la Revista Cinema Coloris, con la que ha cubierto festivales como la Berlinale, Cannes, Venecia o San Sebastián.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+  <div class="wrap grid">
+    <div>
+      <h2 data-i18n="cTitle">Planifica tu viaje</h2>
+      <p class="lede" data-i18n="cLede">Cuéntanos qué tienes en mente y te respondemos con una propuesta.</p>
+      <form id="tripForm" novalidate>
+        <label><span data-i18n="fName">Nombre</span><input name="name" autocomplete="name" required></label>
+        <label><span data-i18n="fFrom">País de origen</span><input name="from" autocomplete="country-name"></label>
+        <label><span data-i18n="fDates">Fechas aproximadas</span><input name="dates" data-i18n-ph="fDatesPh" placeholder="Abril de 2027, 10 días"></label>
+        <label><span data-i18n="fPeople">Número de viajeros</span><input name="people" type="number" min="1" inputmode="numeric" placeholder="2"></label>
+        <label class="full"><span data-i18n="fType">Tipo de viaje</span>
+          <select name="type">
+            <option data-i18n="ft1">Viaje a medida para particulares</option>
+            <option data-i18n="ft2">Viaje fotográfico</option>
+            <option data-i18n="ft3">Invitación institucional o de prensa</option>
+            <option data-i18n="ft4">Otra cosa</option>
+          </select>
+        </label>
+        <label class="full"><span data-i18n="fMsg">¿Qué te gustaría ver o hacer?</span><textarea name="msg" data-i18n-ph="fMsgPh" placeholder="Montañas, pueblos, comida, fotografía…"></textarea></label>
+        <p class="form-note" id="formNote" data-i18n="fNote">Al enviar se abrirá tu programa de correo con el mensaje ya escrito.</p>
+        <div><button class="btn" type="submit" data-i18n="fSend">Enviar por email</button></div>
+      </form>
+    </div>
+    <aside class="card">
+      <h3 data-i18n="wcTitle">Escríbenos por WeChat</h3>
+      <p data-i18n="wcP">Escanea el código para añadir a Pablo (田也). Es la forma más rápida si ya estás en China.</p>
+      <img src="../images/viajes/wechat-qr.png" alt="Código QR de WeChat de Pablo Biedma (田也)" loading="lazy">
+      <p data-i18n="mailP">O por email:</p>
+      <a class="mail" href="mailto:pablobie00@gmail.com?subject=Visita%20China">pablobie00@gmail.com</a>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Revista Cinema Coloris</span>
+    <span><a href="viajes-coloris.html">Viajes Coloris</a> &nbsp; <a href="https://www.cinemacoloris.com/" data-i18n="footHome">Revista Cinema Coloris</a></span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Fotograma">
+  <img id="lbImg" alt="">
+  <button class="x" id="lbX" data-i18n="close">Cerrar</button>
+  <button class="p" id="lbP" aria-label="Anterior">‹</button>
+  <button class="n" id="lbN" aria-label="Siguiente">›</button>
+  <span class="lbcap" id="lbCap"></span>
+</div>
+
+<script>
+(function(){
+  var C='../images/viajes/china/';
+  /* [file, caption key] — captions only where the place is certain */
+  var stripA=[['forbidden-gate','cForbidden'],['zhangjiajie-mist','cZjj'],['chongqing-rail','cCq'],['temple-heaven','cTemple'],['summer-palace','cSummer'],
+    ['lanterns'],['zhangjiajie-lookout','cZjj'],['forest-bridge'],['corner-tower','cForbidden'],['panda-bamboo'],['houhai-boats','cHouhai'],['old-hall'],['forbidden-balustrade','cForbidden']];
+  var stripB=[['temple-heaven-avenue','cTemple'],['forest-tram'],['zhangjiajie-ridge','cZjj'],['forbidden-arch','cForbidden'],['golden-roof'],['river-valley'],
+    ['mountain-temple'],['forbidden-crowd','cForbidden'],['pagoda-trees'],['village-stilt'],['forest-path'],['temple-stairs','cTemple'],['chongqing-courtyard','cCq'],['forbidden-sun','cForbidden']];
+  var all=[];
+  function build(id,list,offset){
+    var el=document.getElementById(id);
+    list.forEach(function(f,i){
+      var n=String(i+offset).padStart(2,'0')+'A',idx=all.length,src=C+f[0]+'.jpg';
+      all.push({src:src,cap:f[1]||null,n:n});
+      var b=document.createElement('button');b.className='frame';b.type='button';
+      b.innerHTML='<img loading="lazy" src="'+src+'" alt=""><span>▸ '+n+(f[1]?'  <i class="fcap" data-k="'+f[1]+'"></i>':'')+'</span>';
+      b.addEventListener('click',function(){openLb(idx)});
+      el.appendChild(b);
+    });
+  }
+  build('reelA',stripA,1);build('reelB',stripB,14);
+
+  var T={
+  en:{skip:"Skip to content",brandSub:"Visit China",menu:"Menu",navRoute:"The other route",navDest:"Destinations",navHow:"How we travel",navInst:"For institutions",navReels:"Reels",navContact:"Contact",
+    heroCredit:"Qian'an, Hebei, 2026",heroTitle:"Visit China",heroSub:"The China that never makes it into the brochures. Tailor-made trips through villages, mountains and neighbourhoods, with two filmmakers from Revista Cinema Coloris.",heroBtn1:"Plan your trip",heroBtn2:"See destinations",
+    routeTitle:"Beijing, Xi'an, Shanghai… and then what?",routeP:"Almost every tour repeats the same triangle: three cities, coach, queue, photo, back to the hotel. They are extraordinary places, but you see them through a crowd. We take you where people still invite you to sit down, eat and stay a while.",
+    themTitle:"The usual tour",them1:"The same three cities in one week",them2:"Coach timetables and queues at every stop",them3:"Restaurants built for tour groups",them4:"The same photo as everyone else",
+    usTitle:"Visit China",us1:"Villages, mountains and neighbourhoods off the circuit",us2:"Small groups and an unhurried pace",us3:"Eating where the locals eat",us4:"Your trip shot on film, if you want it",
+    destTitle:"Destinations",destP:"Places we have been to with a camera. We combine them for you, for a few days or several weeks.",
+    d1t:"Qian'an and the villages of Hebei",d1p:"A few hours from Beijing lies the rural north: mountains folding into layers of blue, golden fields at sunset, and villages where, if you carry a camera, people stop you for a chat and ask for a portrait.",d1g:"Villages, portraits, sunsets over the fields",
+    d2t:"Zhangjiajie",d2p:"Sandstone pillars that appear and vanish in the mist. Beyond the busiest viewpoints there are forest trails, wooden houses, Tujia villages and the odd curious macaque.",d2g:"Mountains, hiking, Tujia villages",
+    d3p:"A vertical city: trains that run through buildings, neighbourhoods clinging to the hillside, endless stairways and China's most famous chilli. Cyberpunk on the outside, old-school on the inside.",d3g:"City, food, night photography",
+    d4t:"Sichuan",d4p:"Giant pandas and red pandas, river valleys, temples hidden in the mountains and teahouses where the afternoon passes without anyone checking the time. Pairs perfectly with Chongqing.",d4g:"Nature, temples, teahouses",
+    d5t:"Beijing on foot",d5p:"We live here. We show you the hutongs, the Houhai swimmers, the neighbours who dance and spin tops in the parks, and the Forbidden City too, but early and unhurried.",d5g:"Hutongs, parks, neighbourhood life",
+    d6t:"Tianjin",d6p:"Half an hour from Beijing by high-speed train: buildings from the old European concessions, walks along the Hai River and a Ferris wheel built on a bridge. Perfect for a day trip.",d6g:"Day trip, architecture, river",
+    howTitle:"How we travel",howLede:"No fixed packages. Every trip starts with a conversation.",
+    s1t:"Write to us",s1p:"On WeChat or by email: how many you are, when you are coming and what you like.",s2t:"We design the route",s2p:"We propose a tailor-made itinerary, with trains, places to stay and the spots that are not in the guidebooks.",s3t:"We travel",s3p:"We come along, or we leave everything ready for you, with local contacts and our own map of places.",s4t:"You take the film home",s4p:"If you want, we photograph your trip on film and send you the scanned negatives.",
+    instTitle:"Promoting a destination?",instLede:"Tourism boards, local governments and event organisers invite us to tell their region to travellers from outside China.",
+    instP:"We arrive as foreign photographers, talk to people and come back with portraits, landscapes, a reel and a written report. We publish it in Spanish, English and Chinese, in the magazine and on Xiaohongshu, WeChat Channels, Instagram and YouTube.",instBtn:"Invite us to your region",
+    gCap:"With the neighbours we had just met. Pablo is the tall one with the camera.",caseTitle:"Case: Qian'an, Hebei, 2026",caseP:"Invited as foreign photographers to the International Photography Exhibition on World Cultural Heritage. We toured the surrounding villages, and what moved us most was not a monument but the people we met along the way.",caseBtn:"See the post on Xiaohongshu",
+    dtEvent:"Event",dtWhere:"Place",ddWhere:"Qian'an and nearby villages, Hebei",dtDid:"Delivered",ddDid:"Portrait and landscape series, vertical reel, Xiaohongshu post (这么近这么美，周末到河北)",dtLang:"Languages",ddLang:"Chinese, with Spanish and English versions",
+    reelsTitle:"China in reels",reelsP:"What we publish on Xiaohongshu and WeChat Channels. Sound on.",rBj:"Beijing",rBjS:"Camera on the bus",rGxS:"There's no Swan Lake here",rHkS:"A day that starts early",rSh:"Shanghai",rShS:"SIFF awards ceremony",rQianan:"Qian'an, Hebei",rQiananS:"Invited photographer, 2026",
+    galTitle:"China on film",galP:"35 mm frames from our trips around the country. Tap any of them to see it large.",hint:"Swipe the strip to see more frames.",
+    cForbidden:"Forbidden City",cZjj:"Zhangjiajie",cCq:"Chongqing",cTemple:"Temple of Heaven",cSummer:"Summer Palace",cHouhai:"Houhai",
+    aboutTitle:"Who we are",aboutLede:"We are not a coach company. We are two filmmakers who have spent years looking at the world through a viewfinder.",
+    pablo:"Andalusian filmmaker and photographer. He lives in Beijing and travels China with a film camera. Co-founder of Revista Cinema Coloris.",pedro:"Filmmaker and photographer. Co-founder of Revista Cinema Coloris, covering festivals such as the Berlinale, Cannes, Venice and San Sebastián.",
+    cTitle:"Plan your trip",cLede:"Tell us what you have in mind and we will reply with a proposal.",fName:"Name",fFrom:"Country",fDates:"Approximate dates",fDatesPh:"April 2027, 10 days",fPeople:"Number of travellers",fType:"Type of trip",
+    ft1:"Tailor-made trip for individuals",ft2:"Photography trip",ft3:"Institutional or press invitation",ft4:"Something else",fMsg:"What would you like to see or do?",fMsgPh:"Mountains, villages, food, photography…",
+    fNote:"Sending opens your email app with the message already written.",fSend:"Send by email",fNeedName:"Add your name so we know who is writing.",
+    wcTitle:"Message us on WeChat",wcP:"Scan the code to add Pablo (田也). It is the fastest way if you are already in China.",mailP:"Or by email:",footHome:"Revista Cinema Coloris",close:"Close",play:"Play"},
+  zh:{skip:"跳到正文",brandSub:"看见中国",menu:"菜单",navRoute:"另一条路线",navDest:"目的地",navHow:"旅行方式",navInst:"文旅合作",navReels:"短视频",navContact:"联系",
+    heroCredit:"河北 迁安，2026",heroTitle:"看见中国",heroSub:"宣传册里没有的中国。由《Cinema Coloris》电影杂志的两位电影人带你走进村庄、群山和街巷，旅程量身定制。",heroBtn1:"规划你的旅程",heroBtn2:"查看目的地",
+    routeTitle:"北京、西安、上海……然后呢？",routeP:"几乎所有旅行团都在重复同一个三角：三座城市，大巴、排队、拍照、回酒店。这些地方很了不起，但只能隔着人群去看。我们带你去那些人们仍会招呼你坐下、吃饭、多待一会儿的地方。",
+    themTitle:"常规旅行团",them1:"一周跑完同样的三座城市",them2:"每一站都赶大巴、排长队",them3:"专为旅行团准备的餐厅",them4:"和所有人一样的照片",
+    usTitle:"看见中国",us1:"不在常规路线上的村庄、山野和街巷",us2:"小团出行，节奏从容",us3:"跟着当地人吃饭",us4:"如果你愿意，我们用胶片记录你的旅程",
+    destTitle:"目的地",destP:"我们带着相机去过的地方。可按你的时间自由组合，几天或几周都可以。",
+    d1t:"迁安与河北乡村",d1p:"离北京几个小时，就是北方的乡村：层层叠叠的蓝色山峦，夕阳下金色的田野。只要你背着相机，村里的乡亲们就会拦下你聊天，请你给他们拍张照。",d1g:"村庄、人像、田野日落",
+    d2t:"张家界",d2p:"砂岩石柱在云雾中时隐时现。避开最拥挤的观景台，还有林间小路、木屋、土家族村寨，以及好奇的猕猴。",d2g:"山地、徒步、土家村寨",
+    d3p:"一座立体的城市：轻轨从楼里穿过，街区挂在山坡上，台阶仿佛没有尽头，还有全中国最有名的麻辣。外表赛博朋克，内里烟火人间。",d3g:"城市、美食、夜景摄影",
+    d3t:"重庆",d4t:"四川",d4p:"大熊猫和小熊猫，河谷，藏在山中的寺庙，还有让人忘记时间的茶馆。和重庆一起去最合适。",d4g:"自然、寺庙、茶馆",
+    d5t:"步行北京",d5p:"我们就住在这里。带你逛胡同，看后海游泳的大爷，看公园里跳舞、抽陀螺的街坊。当然也去故宫，不过要赶早，慢慢看。",d5g:"胡同、公园、街坊生活",
+    d6t:"天津",d6p:"从北京坐高铁半小时：旧租界的老建筑，海河边散步，还有建在桥上的摩天轮。非常适合一日游。",d6g:"一日游、建筑、海河",
+    howTitle:"我们的旅行方式",howLede:"没有固定套餐。每一次旅行都从一次聊天开始。",
+    s1t:"联系我们",s1p:"通过微信或邮件告诉我们：几个人、什么时候来、喜欢什么。",s2t:"设计路线",s2p:"为你量身定制行程，包括火车、住宿，以及旅行指南里找不到的地方。",s3t:"出发",s3p:"我们可以全程陪同，也可以帮你把一切安排好，附上当地联系人和我们的私藏地图。",s4t:"带走你的胶片",s4p:"如果你愿意，我们用胶片记录你的旅程，并把扫描好的底片发给你。",
+    instTitle:"想推广你的目的地？",instLede:"文旅部门、地方政府和活动主办方邀请我们，把他们的地方讲给中国以外的旅行者听。",
+    instP:"我们以外国摄影师的身份到来，和当地人聊天，带回人像、风景、短视频和文字报道，并用西班牙语、英语和中文发布在杂志以及小红书、微信视频号、Instagram 和 YouTube 上。",instBtn:"邀请我们去你的家乡",
+    gCap:"和刚刚认识的乡亲们合影。拿着相机的高个子就是 Pablo（田也）。",caseTitle:"案例：河北迁安，2026",caseP:"我们作为外国摄影师受邀参加2026世界文化遗产国际摄影大展，走访了周边的村庄。最打动我们的不是某个景点，而是一路上遇到的人。",caseBtn:"查看小红书笔记",
+    dtEvent:"活动",dtWhere:"地点",ddWhere:"河北迁安及周边村庄",dtDid:"成果",ddDid:"人像与风景组照、竖版短视频、小红书笔记《这么近这么美，周末到河北》",dtLang:"语言",ddLang:"中文，并有西班牙语和英语版本",
+    reelsTitle:"短视频里的中国",reelsP:"我们发布在小红书和微信视频号上的内容。请打开声音。",rBj:"北京",rBjS:"公交车上的相机",rGxS:"这里哪有天鹅湖啊",rHkS:"早早开始的一天",rSh:"上海",rShS:"上海国际电影节颁奖典礼",rQianan:"河北 迁安",rQiananS:"受邀摄影师，2026",
+    galTitle:"胶片里的中国",galP:"我们在中国各地旅行时拍下的35毫米胶片。点击任意一张查看大图。",hint:"左右滑动胶片条，查看更多画面。",
+    cForbidden:"故宫",cZjj:"张家界",cCq:"重庆",cTemple:"天坛",cSummer:"颐和园",cHouhai:"后海",
+    aboutTitle:"关于我们",aboutLede:"我们不是大巴旅行社。我们是两位多年来透过取景器观察世界的电影人。",
+    pablo:"来自西班牙安达卢西亚的电影人和摄影师，现居北京，带着胶片相机走遍中国。《Cinema Coloris》杂志联合创始人。",pedro:"电影人和摄影师，《Cinema Coloris》杂志联合创始人，曾采访柏林、戛纳、威尼斯、圣塞巴斯蒂安等电影节。",
+    cTitle:"规划你的旅程",cLede:"告诉我们你的想法，我们会给你一份行程建议。",fName:"姓名",fFrom:"国家/地区",fDates:"大致日期",fDatesPh:"2027年4月，10天",fPeople:"人数",fType:"旅行类型",
+    ft1:"个人定制旅行",ft2:"摄影之旅",ft3:"文旅部门或媒体邀请",ft4:"其他",fMsg:"你想看什么、做什么？",fMsgPh:"山、村庄、美食、摄影……",
+    fNote:"点击发送后，会打开你的邮件应用，内容已自动填好。",fSend:"通过邮件发送",fNeedName:"请填写姓名，方便我们知道是谁来信。",
+    wcTitle:"微信联系",wcP:"扫码添加 Pablo（田也）。如果你已经在中国，这是最快的方式。",mailP:"或发邮件：",footHome:"《Cinema Coloris》杂志",close:"关闭",play:"播放"}
+  };
+  var ES={};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ES[el.dataset.i18n]=el.textContent});
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){ES[el.dataset.i18nPh]=el.placeholder});
+  var esExtra={cForbidden:"Ciudad Prohibida",cZjj:"Zhangjiajie",cCq:"Chongqing",cTemple:"Templo del Cielo",cSummer:"Palacio de Verano",cHouhai:"Houhai",fNeedName:"Añade tu nombre para saber quién nos escribe.",play:"Reproducir"};
+  for(var k in esExtra)ES[k]=esExtra[k];
+  var cur='es';
+  function t(key){return (cur==='es'?ES:T[cur])[key]||ES[key]||''}
+  function setLang(l){
+    cur=l;document.documentElement.lang=(l==='zh'?'zh-CN':l);
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var v=t(el.dataset.i18n);if(v)el.textContent=v});
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el){el.placeholder=t(el.dataset.i18nPh)});
+    document.querySelectorAll('.fcap').forEach(function(el){el.textContent=t(el.dataset.k)});
+    document.querySelectorAll('.vid .play').forEach(function(b){b.setAttribute('aria-label',t('play'))});
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l)});
+    try{localStorage.setItem('coloris-lang',l)}catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
+
+  /* header */
+  var top=document.getElementById('top');
+  function onScroll(){top.classList.toggle('solid',window.scrollY>60)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var mb=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+  mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded',false)}});
+
+  /* reels */
+  document.querySelectorAll('.vid').forEach(function(f){
+    var v=f.querySelector('video');
+    f.querySelector('.play').addEventListener('click',function(){v.play()});
+    v.addEventListener('play',function(){f.classList.add('playing');document.querySelectorAll('.vid video').forEach(function(o){if(o!==v)o.pause()})});
+  });
+
+  /* contact form: compose an email */
+  var form=document.getElementById('tripForm'),note=document.getElementById('formNote');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=new FormData(form);
+    if(!String(d.get('name')||'').trim()){note.textContent=t('fNeedName');note.style.color='#f0a04b';form.name.focus();return}
+    var L={es:['Nombre','País','Fechas','Viajeros','Tipo de viaje','Mensaje'],en:['Name','Country','Dates','Travellers','Type of trip','Message'],zh:['姓名','国家/地区','日期','人数','旅行类型','留言']}[cur];
+    var body=[L[0]+': '+d.get('name'),L[1]+': '+(d.get('from')||''),L[2]+': '+(d.get('dates')||''),L[3]+': '+(d.get('people')||''),L[4]+': '+form.type.options[form.type.selectedIndex].text,'',L[5]+':',d.get('msg')||''].join('\n');
+    location.href='mailto:pablobie00@gmail.com?subject='+encodeURIComponent('Visita China: '+d.get('name'))+'&body='+encodeURIComponent(body);
+  });
+
+  /* lightbox */
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap'),li=0,lastFocus=null;
+  function openLb(i){li=i;lastFocus=document.activeElement;showLb();lb.classList.add('open');document.getElementById('lbX').focus()}
+  function showLb(){var f=all[li];lbImg.src=f.src;lbCap.textContent='▸ '+f.n+(f.cap?'   '+t(f.cap):'')}
+  function closeLb(){lb.classList.remove('open');lbImg.removeAttribute('src');if(lastFocus)lastFocus.focus()}
+  document.getElementById('lbX').onclick=closeLb;
+  document.getElementById('lbP').onclick=function(){li=(li-1+all.length)%all.length;showLb()};
+  document.getElementById('lbN').onclick=function(){li=(li+1)%all.length;showLb()};
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')closeLb();
+    if(e.key==='ArrowLeft')document.getElementById('lbP').click();
+    if(e.key==='ArrowRight')document.getElementById('lbN').click();
+  });
+
+  var saved=null;try{saved=localStorage.getItem('coloris-lang')}catch(e){}
+  var q=new URLSearchParams(location.search).get('lang');
+  setLang((q&&(T[q]||q==='es'))?q:(saved||'es'));
+})();
+</script>
+</body>
+</html>
