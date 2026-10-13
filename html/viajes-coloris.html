@@ -117,7 +117,7 @@ h2{font-weight:400;font-size:clamp(2.1rem,1.5rem + 2.6vw,3.9rem);line-height:1.0
 .frame{flex:0 0 auto;scroll-snap-align:start;background:none;border:0;padding:0;cursor:zoom-in;color:var(--amber);font-family:var(--edge);text-align:left}
 .frame img{height:clamp(150px,22vw,250px);width:auto;aspect-ratio:3/2;object-fit:cover;filter:saturate(.96);transition:filter .25s}
 .frame:hover img{filter:saturate(1.08) brightness(1.06)}
-.frame span{display:block;font-size:.85rem;letter-spacing:.08em;margin-top:5px;opacity:.9}
+.frame span{display:block;font-size:.85rem;letter-spacing:.06em;margin-top:5px;opacity:.9;white-space:nowrap}
 .hint{font-family:var(--edge);color:var(--mute);font-size:.95rem;padding:0 var(--gutter);margin:6px 0 0}
 
 /* ---------- coverage list ---------- */
@@ -204,12 +204,12 @@ html[lang="zh-CN"] .china .zh{display:none}
 <main id="main">
 <!-- HERO -->
 <div class="hero" id="hero">
-  <img class="slide on" src="../images/viajes/mundo/jetty.jpg" alt="Un muelle de madera que se adentra en el mar en calma" data-cap="capJetty">
+  <img class="slide on" src="../images/viajes/mundo/jetty.jpg" alt="Un muelle de madera que se adentra en el mar en Koh Rong Sanloem, Camboya" data-cap="capJetty">
   <img class="slide" src="../images/viajes/mundo/angkor-sunset.jpg" alt="Atardecer entre las piedras de Angkor" data-cap="capAngkor" loading="lazy">
   <img class="slide" src="../images/viajes/china/zhangjiajie-mist.jpg" alt="Pilares de roca entre la niebla en Zhangjiajie" data-cap="capZjj" loading="lazy">
   <img class="slide" src="../images/viajes/qianan/fields.jpg" alt="Campos dorados y montañas al atardecer en Qian'an, Hebei" data-cap="capQianan" loading="lazy">
-  <img class="slide" src="../images/viajes/mundo/red-road-bike.jpg" alt="Una moto avanza por un camino de tierra roja" data-cap="capRoad" loading="lazy">
-  <img class="slide" src="../images/viajes/mundo/boat-silhouette.jpg" alt="Una barca a contraluz sobre el mar al atardecer" data-cap="capDusk" loading="lazy">
+  <img class="slide" src="../images/viajes/mundo/red-road-bike.jpg" alt="Una moto por un camino de tierra roja en Koh Rong Sanloem, Camboya" data-cap="capRoad" loading="lazy">
+  <img class="slide" src="../images/viajes/mundo/boat-silhouette.jpg" alt="Una barca a contraluz al atardecer en las islas Perhentian, Malasia" data-cap="capDusk" loading="lazy">
   <div class="hero-copy">
     <h1>Viajes Coloris</h1>
     <p data-i18n="heroSub">La revista de cine que también hace las maletas. Lugares, gente y luz, fotografiados en 35 mm.</p>
@@ -218,7 +218,7 @@ html[lang="zh-CN"] .china .zh{display:none}
     <div class="print">
       <span class="stock">COLORIS 400</span>
       <span id="frameNo">01A</span>
-      <span class="cap" id="frameCap" aria-live="polite">Un muelle al final del camino</span>
+      <span class="cap" id="frameCap" aria-live="polite">Koh Rong Sanloem, Camboya</span>
       <span class="ctrl"><button id="prevSlide" aria-label="Anterior">‹</button><button id="pauseSlide" aria-label="Pausar">❚❚</button><button id="nextSlide" aria-label="Siguiente">›</button></span>
     </div>
   </div>
@@ -269,7 +269,7 @@ html[lang="zh-CN"] .china .zh{display:none}
         <p class="zh" lang="zh-CN">看见真实的中国</p>
       </div>
       <div>
-        <p data-i18n="chinaP">Desde Pekín os enseñamos la China que no sale en los folletos: aldeas de Hebei donde te invitan a sentarte bajo el árbol, montañas de niebla en Hunan, un tren que atraviesa un edificio en Chongqing. Viajes a medida, lejos de las rutas masificadas.</p>
+        <p data-i18n="chinaP">Desde Pekín os enseñamos la China que no sale en los folletos: aldeas de Hebei donde te invitan a sentarte bajo el árbol, las montañas de niebla de Zhangjiajie, un tren que atraviesa un edificio en Chongqing. Viajes a medida, lejos de las rutas masificadas.</p>
         <a class="btn" href="visita-china.html" data-i18n="chinaBtn">Entrar en Visita China</a>
       </div>
     </div>
@@ -391,14 +391,14 @@ html[lang="zh-CN"] .china .zh{display:none}
   /* ---------- film frames for the contact sheet ---------- */
   var M='../images/viajes/mundo/', C='../images/viajes/china/', Q='../images/viajes/qianan/';
   var stripA=[
-    [M+'angkor-window.jpg','capAngkor2'],[M+'dust-sweepers.jpg'],[M+'turquoise-boats.jpg'],[C+'zhangjiajie-peaks.jpg','capZjj'],
-    [M+'tuktuk-road.jpg'],[M+'sunset-boat.jpg'],[M+'teal-window.jpg'],[M+'palms-pier.jpg'],[C+'forbidden-gate.jpg','capForbidden'],
-    [M+'red-road.jpg'],[M+'lantern-pier.jpg'],[M+'motorbike.jpg'],[M+'cove.jpg'],[Q+'blue-hills.jpg','capQianan'],[M+'wreck.jpg']
+    [M+'angkor-window.jpg','capAngkor2'],[M+'dust-sweepers.jpg','capAngkorNear'],[M+'turquoise-boats.jpg'],[C+'zhangjiajie-peaks.jpg','capZjj'],
+    [M+'tuktuk-road.jpg','capSiem'],[M+'sunset-boat.jpg','capPerh'],[M+'teal-window.jpg','capAngkor'],[M+'palms-pier.jpg','capKrs'],[C+'forbidden-gate.jpg','capForbidden'],
+    [M+'red-road.jpg','capKrs'],[M+'lantern-pier.jpg'],[M+'motorbike.jpg','capSiem'],[M+'cove.jpg','capKrs'],[Q+'blue-hills.jpg','capQianan'],[M+'wreck.jpg','capLazy']
   ];
   var stripB=[
-    [M+'islands-dusk.jpg'],[M+'river-dusk.jpg'],[C+'chongqing-rail.jpg','capCq'],[M+'beach-flowers.jpg'],[M+'golden-trees.jpg'],
-    [M+'pink-beach.jpg'],[M+'road-to-sea.jpg'],[C+'temple-heaven.jpg','capTemple'],[M+'shallow-boats.jpg'],[M+'street-tuktuk.jpg'],
-    [M+'horizon.jpg'],[M+'leaves-island.jpg'],[M+'kayak-pier.jpg'],[M+'alley.jpg'],[M+'sun-sea.jpg']
+    [M+'islands-dusk.jpg','capPerh'],[M+'river-dusk.jpg','capSiem'],[C+'chongqing-rail.jpg','capCq'],[M+'beach-flowers.jpg','capPB'],[M+'golden-trees.jpg','capSiem'],
+    [M+'pink-beach.jpg'],[M+'road-to-sea.jpg','capKrs'],[C+'temple-heaven.jpg','capTemple'],[M+'shallow-boats.jpg','capLazy'],[M+'street-tuktuk.jpg','capCambodia'],
+    [M+'horizon.jpg','capKrs'],[M+'leaves-island.jpg'],[M+'kayak-pier.jpg'],[M+'alley.jpg','capSiem'],[M+'sun-sea.jpg','capPB'],[C+'dujiangyan.jpg','capDjy']
   ];
   var all=[];
   function build(id,list,offset){
@@ -407,7 +407,7 @@ html[lang="zh-CN"] .china .zh{display:none}
       var n=String(i+offset).padStart(2,'0')+'A', idx=all.length;
       all.push({src:f[0],cap:f[1]||null,n:n});
       var b=document.createElement('button');b.className='frame';b.type='button';
-      b.innerHTML='<img loading="lazy" src="'+f[0]+'" alt=""><span>▸ '+n+'</span>';
+      b.innerHTML='<img loading="lazy" src="'+f[0]+'" alt=""><span>▸ '+n+(f[1]?'  <i class="fcap" data-k="'+f[1]+'"></i>':'')+'</span>';
       b.addEventListener('click',function(){openLb(idx)});
       el.appendChild(b);
     });
@@ -418,13 +418,13 @@ html[lang="zh-CN"] .china .zh{display:none}
   var T={
   en:{skip:"Skip to content",brandSub:"Travel",menu:"Menu",navChina:"Visit China",navSheet:"Contact sheet",navCover:"Coverage",navReels:"Reels",navCollab:"Work with us",
     heroSub:"The film magazine that also packs a suitcase. Places, people and light, shot on 35 mm.",
-    capJetty:"A jetty at the end of the road",capAngkor:"Angkor, Cambodia",capAngkor2:"Angkor Wat, Cambodia",capZjj:"Zhangjiajie, China",capQianan:"Qian'an, Hebei",capRoad:"Red earth road",capDusk:"Last light on the water",capForbidden:"Forbidden City, Beijing",capCq:"Chongqing",capTemple:"Temple of Heaven, Beijing",
+    capJetty:"Koh Rong Sanloem, Cambodia",capAngkor:"Angkor, Cambodia",capAngkor2:"Angkor Wat, Cambodia",capZjj:"Zhangjiajie, China",capQianan:"Qian'an, Hebei",capRoad:"Koh Rong Sanloem, Cambodia",capDusk:"Perhentian Islands, Malaysia",capAngkorNear:"Near Angkor, Cambodia",capSiem:"Siem Reap, Cambodia",capPerh:"Perhentian Islands, Malaysia",capPB:"Perhentian Besar, Malaysia",capKrs:"Koh Rong Sanloem, Cambodia",capLazy:"Lazy Beach, Koh Rong Sanloem",capCambodia:"Cambodia",capDjy:"Dujiangyan, Sichuan",capForbidden:"Forbidden City, Beijing",capCq:"Chongqing",capTemple:"Temple of Heaven, Beijing",
     introTitle:"Looking at a place the way you watch a film",introLede:"For years we have travelled to festivals, museums and concert halls with a press pass round our necks and a film camera in our pocket.",
     introP1:"Viajes Coloris collects what we saw outside the cinema: dirt roads, harbours at dusk, villages where nobody expects a photographer, and the people who live there. We write and photograph them the way we write about film, slowly and with an eye on the frame.",
     introP2:"We are Pedro Fuertes and Pablo Biedma, independent filmmakers and photographers and founders of Revista Cinema Coloris. One of us now lives in Beijing, which is why this section begins with China.",
     credsTitle:"Accredited at",credsTitle2:"And inside",cBerlin:"Berlin",cVeniceName:"Venice Film Festival",cVenice:"Venice",cSsName:"San Sebastián Film Festival",cHk:"Hong Kong",cSh:"Shanghai",cAms:"Amsterdam",cVgName:"Van Gogh Museum",
     figHouhai:"Houhai, Beijing",figQianan:"Qian'an, Hebei",chinaTitle:"Visit China",
-    chinaP:"From Beijing we show you the China that never makes it into the brochures: Hebei villages where people invite you to sit under the tree, misty mountains in Hunan, a train that runs through a building in Chongqing. Tailor-made trips, away from the crowded routes.",
+    chinaP:"From Beijing we show you the China that never makes it into the brochures: Hebei villages where people invite you to sit under the tree, the misty mountains of Zhangjiajie, a train that runs through a building in Chongqing. Tailor-made trips, away from the crowded routes.",
     chinaBtn:"Enter Visit China",sheetTitle:"Contact sheet",sheetP:"Frames from our latest rolls, uncropped and unretouched. Tap any of them to see it large.",sheetHint:"Swipe the strip to see more frames.",
     coverTitle:"Coverage",coverLede:"When we are invited, we go, we look and we tell it: written report, photography and video.",coverFest:"Film festivals",coverMuseums:"Museums and concerts",coverTravel:"Invited trips",
     liVenice:"Venice Film Festival<small>Venice</small>",liSs:"San Sebastián Film Festival<small>Donostia</small>",liHkiff:"Hong Kong International Film Festival<small>Hong Kong</small>",liSiff:"Shanghai International Film Festival<small>Shanghai</small>",
@@ -437,13 +437,13 @@ html[lang="zh-CN"] .china .zh{display:none}
     cardTitle:"Write to us",cardP:"Tell us the place, the dates and what you would like us to tell. We reply in Spanish, English or Chinese.",qrP:"Or add Pablo (田也) on WeChat by scanning the code.",cardBtn:"Plan a trip to China",footHome:"Back to the magazine",close:"Close"},
   zh:{skip:"跳到正文",brandSub:"旅行",menu:"菜单",navChina:"看见中国",navSheet:"胶片小样",navCover:"报道",navReels:"短视频",navCollab:"合作",
     heroSub:"一本也会收拾行囊的电影杂志。用35毫米胶片记录地方、人与光。",
-    capJetty:"路尽头的木栈桥",capAngkor:"柬埔寨 吴哥",capAngkor2:"柬埔寨 吴哥窟",capZjj:"中国 张家界",capQianan:"河北 迁安",capRoad:"红土路",capDusk:"水面上的最后一缕光",capForbidden:"北京 故宫",capCq:"重庆",capTemple:"北京 天坛",
+    capJetty:"柬埔寨 高龙撒冷岛",capAngkor:"柬埔寨 吴哥",capAngkor2:"柬埔寨 吴哥窟",capZjj:"中国 张家界",capQianan:"河北 迁安",capRoad:"柬埔寨 高龙撒冷岛",capDusk:"马来西亚 停泊岛",capAngkorNear:"柬埔寨 吴哥附近",capSiem:"柬埔寨 暹粒",capPerh:"马来西亚 停泊岛",capPB:"马来西亚 大停泊岛",capKrs:"柬埔寨 高龙撒冷岛",capLazy:"柬埔寨 高龙撒冷岛 Lazy Beach",capCambodia:"柬埔寨",capDjy:"四川 都江堰",capForbidden:"北京 故宫",capCq:"重庆",capTemple:"北京 天坛",
     introTitle:"像看电影一样看一个地方",introLede:"多年来，我们挂着记者证、口袋里揣着胶片相机，走遍电影节、博物馆和音乐厅。",
     introP1:"“Viajes Coloris”收录了我们在影院之外看到的一切：土路、黄昏的港口、没人会想到有摄影师到来的村庄，以及生活在那里的人们。我们用谈论电影的眼光去写、去拍：不慌不忙，留心每一个画面。",
     introP2:"我们是 Pedro Fuertes 和 Pablo Biedma（田也），独立电影人和摄影师，也是《Cinema Coloris》电影杂志的创办人。我们中的一位如今住在北京，所以这个栏目从中国开始。",
     credsTitle:"持证采访过",credsTitle2:"也走进过",cBerlin:"柏林",cVeniceName:"威尼斯电影节",cVenice:"威尼斯",cSsName:"圣塞巴斯蒂安电影节",cHk:"香港",cSh:"上海",cAms:"阿姆斯特丹",cVgName:"梵高博物馆",
     figHouhai:"北京 后海",figQianan:"河北 迁安",chinaTitle:"看见中国",
-    chinaP:"我们从北京出发，带你看宣传册里没有的中国：河北的村庄里，乡亲们会邀你在树下坐一坐；湖南的群山在云雾里时隐时现；重庆的轻轨从楼里穿过。量身定制的旅程，远离人潮拥挤的路线。",
+    chinaP:"我们从北京出发，带你看宣传册里没有的中国：河北的村庄里，乡亲们会邀你在树下坐一坐；张家界的群山在云雾里时隐时现；重庆的轻轨从楼里穿过。量身定制的旅程，远离人潮拥挤的路线。",
     chinaBtn:"进入“看见中国”",sheetTitle:"胶片小样",sheetP:"最近几卷胶片里的画面，不裁剪、不修图。点击任意一张查看大图。",sheetHint:"左右滑动胶片条，查看更多画面。",
     coverTitle:"报道",coverLede:"受邀而来，用心观看，再把故事讲出来：文字报道、摄影和视频。",coverFest:"电影节",coverMuseums:"博物馆与音乐会",coverTravel:"受邀旅行",
     liVenice:"威尼斯电影节<small>威尼斯</small>",liSs:"圣塞巴斯蒂安电影节<small>多诺斯蒂亚</small>",liHkiff:"香港国际电影节<small>香港</small>",liSiff:"上海国际电影节<small>上海</small>",
@@ -459,7 +459,7 @@ html[lang="zh-CN"] .china .zh{display:none}
   var ES={};
   document.querySelectorAll('[data-i18n]').forEach(function(el){ES[el.dataset.i18n]=el.textContent});
   document.querySelectorAll('[data-i18n-html]').forEach(function(el){ES[el.dataset.i18nHtml]=el.innerHTML});
-  var esCaps={capJetty:"Un muelle al final del camino",capAngkor:"Angkor, Camboya",capAngkor2:"Angkor Wat, Camboya",capZjj:"Zhangjiajie, China",capQianan:"Qian'an, Hebei",capRoad:"Camino de tierra roja",capDusk:"La última luz sobre el agua",capForbidden:"Ciudad Prohibida, Pekín",capCq:"Chongqing",capTemple:"Templo del Cielo, Pekín"};
+  var esCaps={capJetty:"Koh Rong Sanloem, Camboya",capAngkor:"Angkor, Camboya",capAngkor2:"Angkor Wat, Camboya",capZjj:"Zhangjiajie, China",capQianan:"Qian'an, Hebei",capRoad:"Koh Rong Sanloem, Camboya",capDusk:"Islas Perhentian, Malasia",capAngkorNear:"Cerca de Angkor, Camboya",capSiem:"Siem Reap, Camboya",capPerh:"Islas Perhentian, Malasia",capPB:"Perhentian Besar, Malasia",capKrs:"Koh Rong Sanloem, Camboya",capLazy:"Lazy Beach, Koh Rong Sanloem",capCambodia:"Camboya",capDjy:"Dujiangyan, Sichuan",capForbidden:"Ciudad Prohibida, Pekín",capCq:"Chongqing",capTemple:"Templo del Cielo, Pekín"};
   for(var k in esCaps) ES[k]=esCaps[k];
   var cur='es';
   function t(key){return (cur==='es'?ES:T[cur])[key]||ES[key]||''}
@@ -470,6 +470,7 @@ html[lang="zh-CN"] .china .zh{display:none}
     document.querySelectorAll('[data-i18n-html]').forEach(function(el){var v=t(el.dataset.i18nHtml);if(v)el.innerHTML=v});
     document.querySelectorAll('.vid .play').forEach(function(b){b.setAttribute('aria-label',t('play')||'Reproducir')});
     document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l)});
+    document.querySelectorAll('.fcap').forEach(function(el){el.textContent=t(el.dataset.k)});
     showCap();
     try{localStorage.setItem('coloris-lang',l)}catch(e){}
   }
